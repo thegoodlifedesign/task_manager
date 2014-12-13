@@ -1,0 +1,1 @@
+<h1>{{$username}}</h1> has been activated
