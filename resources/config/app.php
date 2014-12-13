@@ -109,7 +109,7 @@ return [
 	*/
 
 	'providers' => [
-
+		'Barryvdh\Debugbar\ServiceProvider',
 		/*
 		 * Application Service Providers...
 		 */
