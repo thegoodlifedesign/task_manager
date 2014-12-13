@@ -32,9 +32,7 @@ class MemberActivateCommandHandler implements CommandHandler
     {
         $token = Member::activate($command->activate_token);
 
-        dd($token);
-
-        $this->memberRepo->activate($token);
+        $this->memberRepo->activate($command);
 
         $this->dispatchEventsFor($token);
     }
