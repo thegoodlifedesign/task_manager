@@ -67,8 +67,6 @@
                             <input type="hidden" name="task_id" value="{{$task->id}}">
                             <input class="btn btn-primary" type="submit" value="accept">
                         {!! Form::close() !!}
-                    @else
-                        sup dude
                     @endif
                     @if(App::make('taskHelpers')->userAcceptedTask($task))
                         {!! Form::open(['url' => URL::route('start.task')]) !!}
