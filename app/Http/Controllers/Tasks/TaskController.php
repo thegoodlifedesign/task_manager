@@ -19,7 +19,7 @@ class TaskController extends AbstractTaskController
      */
     public function index()
     {
-        //
+        
     }
 
     /**

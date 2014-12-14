@@ -1,5 +1,6 @@
 <?php namespace TGLD\Providers;
 
+use Illuminate\Routing\Router;
 use Illuminate\Support\ServiceProvider;
 use TGLD\Helpers\TaskFormHelper;
 use TGLD\Helpers\TaskHelper;
@@ -41,7 +42,8 @@ class HelperServiceProvider extends ServiceProvider
         $this->app->bind('userHelpers', function()
         {
             $auth = $this->app->make('Illuminate\Contracts\Auth\Guard');
-            return new UserHelper($auth, new  MemberRepository(new Member));
+            $router = $this->app->make('Illuminate\Routing\Router');
+            return new UserHelper($auth, new  MemberRepository(new Member), $router);
         });
     }
 
