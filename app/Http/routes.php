@@ -94,10 +94,6 @@ $router->post('task/start-task', ['as' => 'start.task', 'uses' => 'Tasks\Started
  */
 $router->get('{username}/completed-tasks', ['as' => 'completed.tasks', 'uses' => 'Tasks\CompletedTaskController@getCompletedTasks']);
 $router->post('task/complete-task', ['as' => 'complete.task', 'uses' => 'Tasks\CompletedTaskController@postCompleteTask']);
-/*
- * DOWNLOAD
- */
-$router->get('task/download/{file}', ['as' => 'download.task', 'uses' => 'Tasks\TaskController@getDownloadFile']);
 
 
 

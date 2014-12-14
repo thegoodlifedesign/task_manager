@@ -109,22 +109,4 @@ class TaskController extends AbstractTaskController
     {
         //
     }
-
-    /**
-     * Get the download link to a file
-     * in a task
-     *
-     *
-     * @param $project
-     * @param $task
-     * @param $download
-     * @internal param $download_url
-     * @return \Symfony\Component\HttpFoundation\BinaryFileResponse
-     */
-    public function getDownloadFile($project, $task ,$download)
-    {
-        $file = public_path(). "/media/file_uploads/$download";
-
-        return response()->download($file, $download);
-    }
 }
