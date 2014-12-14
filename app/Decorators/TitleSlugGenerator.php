@@ -2,12 +2,12 @@
 
 
 use Laracasts\Commander\CommandBus;
+use TGLD\Tasks\Repositories\TaskRepository;
 use TGLD\Utilities\Sluger\Sluger;
 
 class TitleSlugGenerator implements CommandBus
 {
-    protected
-    $sluger;
+    protected $sluger;
 
     function __construct(Sluger $sluger)
     {
@@ -22,6 +22,12 @@ class TitleSlugGenerator implements CommandBus
      */
     public function execute($command)
     {
-        $command->slug = $this->sluger->sluggify($command->title);
+        $slug = $this->sluger->sluggify($command->title);
+
+        $slug_exists = $this->sluger->checkTitleSlugExist($slug);
+
+        if( ! $slug_exists){ return $command->slug = $slug;}
+
+        return $command->slug = $slug.rand(99,9999);
     }
 }

@@ -20,6 +20,12 @@ class UsernameSlugGenerator implements CommandBus
      */
     public function execute($command)
     {
-        $command->slug = $this->sluger->sluggify($command->username);
+        $slug = $this->sluger->sluggify($command->username);
+
+        $slug_exists = $this->sluger->checkUsernameSlugExist($slug);
+
+        if( ! $slug_exists){ return $command->slug = $slug;}
+
+        return $command->slug = $slug.rand(99,9999);
     }
 }

@@ -61,4 +61,9 @@ abstract class EloquentRepository
     {
 
     }
+
+    public function getSlug($slug)
+    {
+        return $this->model->where('slug', '=', $slug)->first();
+    }
 }

@@ -17,7 +17,7 @@ class CreateProjectsTable extends Migration {
 			$table->increments('id');
 			$table->string('title');
 			$table->text('description');
-			$table->string('slug');
+			$table->string('slug')->unique();
 			$table->dateTime('created_at');
 			$table->dateTime('updated_at');
 			$table->dateTime('completed_at');

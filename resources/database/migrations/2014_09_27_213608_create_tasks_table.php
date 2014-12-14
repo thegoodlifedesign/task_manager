@@ -22,7 +22,7 @@ class CreateTasksTable extends Migration {
 			$table->integer('priority');
 			$table->string('file_url')->nullable();
 			$table->integer('stage')->default(1);
-			$table->string('slug');
+			$table->string('slug')->unique();
             $table->dateTime('created_at');
             $table->dateTime('updated_at');
             $table->dateTime('accepted_at');
