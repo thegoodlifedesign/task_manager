@@ -25,7 +25,7 @@
               <span class="icon-bar"></span>
             </button>
             @if(Auth::check())
-                <a class="navbar-brand" href="/">Task Manager</a>
+                <a class="navbar-brand" href="{!! URL::route('assigned.tasks', $attributes = ['username' => Auth::user()->username]) !!}">Task Manager</a>
             @else
                 <a class="navbar-brand" href="/">Task Manager</a>
             @endif
