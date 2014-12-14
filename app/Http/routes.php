@@ -113,8 +113,8 @@ $router->post('task/complete-task', ['as' => 'complete.task', 'uses' => 'Tasks\C
 /*
  * ADD PROJECT
  */
-$router->get('project/add-project', ['as' => 'add.project', 'uses' => 'Projects\ProjectController@create']);
-$router->post('project/add-project', ['as' => 'add.project', 'uses' => 'Projects\ProjectController@store']);
+$router->get('project/add', ['as' => 'add.project', 'uses' => 'Projects\ProjectController@create']);
+$router->post('project/add', ['as' => 'add.project', 'uses' => 'Projects\ProjectController@store']);
 /*
  * SHOW PROJECTS
  */

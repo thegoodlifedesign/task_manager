@@ -16,7 +16,7 @@
             {!! Form::open() !!}
                 <div class="form-group">
                     <label for="projectName">Project Name</label>
-                    <input type="text" id="projectName" name="name" class="form-control" placeholder="Name of Project">
+                    <input type="text" id="projectName" name="title" class="form-control" placeholder="Name of Project">
                 </div>
                 <div class="form-group">
                     <label for="projectDescription">Project Description</label>

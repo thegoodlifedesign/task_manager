@@ -1,7 +1,7 @@
 <?php namespace TGLD\Http\Controllers\Projects;
 
 use TGLD\Http\Controllers\CommandController;
-use TGLD\Http\Requests\ProjectRequest;
+use TGLD\Http\Requests\Projects\ProjectRequest;
 use TGLD\Projects\Services\projectService;
 use TGLD\Projects\UseCases\PostNewProjectCommand;
 use TGLD\Tasks\Services\TaskService;
@@ -60,7 +60,9 @@ class ProjectController extends CommandController
      */
     public function store(ProjectRequest $request)
     {
-        $this->execute(PostNewProjectCommand::class);
+        $this->execute(PostNewProjectCommand::class,null,[
+            'TGLD\Decorators\ProjectSlugGenerator'
+        ]);
 
         Flash::message('Project Created!');
 

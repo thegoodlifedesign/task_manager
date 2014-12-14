@@ -18,12 +18,6 @@ class Task extends Model
      */
     protected $fillable = ['id', 'title', 'slug', 'file_url', 'description', 'assigned_from', 'assigned_to', 'project_id', 'priority'];
 
-    /**
-     * The attributes excluded from the model's JSON form.
-     *
-     * @var array
-     */
-    protected $hidden = ['password', 'remember_token'];
 
     /*
     |--------------------------------------------------------------------------

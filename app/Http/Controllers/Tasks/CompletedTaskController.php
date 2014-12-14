@@ -1,6 +1,6 @@
 <?php namespace TGLD\Http\Controllers\Tasks;
 
-use TGLD\Http\Requests\CompleteTaskRequest;
+use TGLD\Http\Requests\Tasks\CompleteTaskRequest;
 use TGLD\Tasks\UseCases\CompletedTaskCommand;
 use TGLD\Utilities\Flash\Flash;
 

@@ -1,6 +1,7 @@
-<?php namespace TGLD\Http\Requests;
+<?php namespace TGLD\Http\Requests\Tasks;
 
 use Illuminate\Contracts\Auth\Guard;
+use TGLD\Http\Requests\Request;
 
 class DeleteTaskRequest extends Request
 {

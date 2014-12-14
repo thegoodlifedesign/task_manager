@@ -1,5 +1,6 @@
 <?php namespace TGLD\Http\Controllers\Tasks;
 
+use TGLD\Http\Requests\Tasks\AcceptTaskRequest;
 use TGLD\Tasks\UseCases\AcceptedTaskCommand;
 use TGLD\Utilities\Flash\Flash;
 
@@ -7,8 +8,6 @@ class AcceptanceTaskController extends AbstractTaskController
 {
     /**
      * Display the tasks assigned to $username.
-     *
-     * @Get("{username}/accepted-tasks", as="accepted-tasks")
      *
      * @param  string $username
      * @return Response
@@ -23,11 +22,10 @@ class AcceptanceTaskController extends AbstractTaskController
     /**
      * Accept a task
      *
-     * @Post("task/accept", as="accept-task")
-     *
+     * @param AcceptTaskRequest $request
      * @return \Illuminate\Http\RedirectResponse
      */
-    public function postAcceptTask()
+    public function postAcceptTask(AcceptTaskRequest $request)
     {
         $this->execute(AcceptedTaskCommand::class);
 

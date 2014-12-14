@@ -1,10 +1,9 @@
 <?php namespace TGLD\Decorators;
 
 use Laracasts\Commander\CommandBus;
-use TGLD\Tasks\Repositories\TaskRepository;
 use TGLD\Utilities\Sluger\Sluger;
 
-class TaskSlugGenerator implements CommandBus
+class ProjectSlugGenerator implements CommandBus
 {
     protected $sluger;
 
@@ -23,7 +22,7 @@ class TaskSlugGenerator implements CommandBus
     {
         $slug = $this->sluger->sluggify($command->title);
 
-        $slug_exists = $this->sluger->checkTaskTitleSlugExist($slug);
+        $slug_exists = $this->sluger->checkProjectTitleSlugExist($slug);
 
         if( ! $slug_exists){ return $command->slug = $slug;}
 

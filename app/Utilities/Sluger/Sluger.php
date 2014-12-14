@@ -1,17 +1,35 @@
 <?php namespace TGLD\Utilities\Sluger;
 
 use TGLD\Members\Repositories\MemberRepository;
+use TGLD\Projects\Repositories\ProjectRepository;
 use TGLD\Tasks\Repositories\TaskRepository;
 
 class Sluger
 {
+    /**
+     * @var MemberRepository
+     */
     protected $memberRepo;
 
+    /**
+     * @var ProjectRepository
+     */
+    protected $projectRepo;
+
+    /**
+     * @var TaskRepository
+     */
     protected $taskRepo;
 
-    function __construct(MemberRepository $memberRepo, TaskRepository $taskRepo)
+    /**
+     * @param MemberRepository $memberRepo
+     * @param TaskRepository $taskRepo
+     * @param ProjectRepository $projectRepo
+     */
+    function __construct(MemberRepository $memberRepo, TaskRepository $taskRepo, ProjectRepository $projectRepo)
     {
         $this->memberRepo = $memberRepo;
+        $this->projectRepo = $projectRepo;
         $this->taskRepo = $taskRepo;
     }
 
@@ -30,6 +48,10 @@ class Sluger
         return $clean;
     }
 
+    /**
+     * @param $slug
+     * @return bool
+     */
     public function checkUsernameSlugExist($slug)
     {
         $slug_exist = $this->memberRepo->getSlug($slug);
@@ -39,9 +61,26 @@ class Sluger
         return true;
     }
 
-    public function checkTitleSlugExist($slug)
+    /**
+     * @param $slug
+     * @return bool
+     */
+    public function checkTaskTitleSlugExist($slug)
     {
         $slug_exist = $this->taskRepo->getSlug($slug);
+
+        if( ! $slug_exist){ return false;}
+
+        return true;
+    }
+
+    /**
+     * @param $slug
+     * @return bool
+     */
+    public function checkProjectTitleSlugExist($slug)
+    {
+        $slug_exist = $this->projectRepo->getSlug($slug);
 
         if( ! $slug_exist){ return false;}
 

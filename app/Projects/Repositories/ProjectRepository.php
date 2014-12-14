@@ -20,4 +20,20 @@ class ProjectRepository extends EloquentRepository
     {
         return $this->model->where('slug', '=', $project_slug)->first();
     }
+
+    /**
+     * Save a new project to the db
+     *
+     * @param $project
+     */
+    public function saveProject($project)
+    {
+
+        $this->model->title = $project->title;
+        $this->model->description = $project->description;
+        $this->model->slug = $project->slug;
+
+        $this->model->save();
+
+    }
 }

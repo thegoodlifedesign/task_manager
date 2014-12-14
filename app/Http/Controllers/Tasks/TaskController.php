@@ -1,9 +1,9 @@
 <?php namespace TGLD\Http\Controllers\Tasks;
 
 use Illuminate\Contracts\Auth\Guard;
-use TGLD\Http\Requests\AddTaskRequest;
-use TGLD\Http\Requests\DeleteTaskRequest;
-use TGLD\Http\Requests\UpdateTaskRequest;
+use TGLD\Http\Requests\Tasks\AddTaskRequest;
+use TGLD\Http\Requests\Tasks\DeleteTaskRequest;
+use TGLD\Http\Requests\Tasks\UpdateTaskRequest;
 use TGLD\Tasks\UseCases\DeleteTaskCommand;
 use TGLD\Tasks\UseCases\PostNewTaskCommand;
 use TGLD\Tasks\UseCases\UpdateTaskCommand;
@@ -43,7 +43,7 @@ class TaskController extends AbstractTaskController
         $this->execute(PostNewTaskCommand::class, null, [
             'TGLD\Decorators\FileUploader',
             'TGLD\Decorators\TaskFormSanitizer',
-            'TGLD\Decorators\TitleSlugGenerator',
+            'TGLD\Decorators\TaskSlugGenerator',
         ]);
 
         Flash::message('Task has been added!');

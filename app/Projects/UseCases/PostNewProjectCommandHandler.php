@@ -22,7 +22,7 @@ class PostNewProjectCommandHandler implements CommandHandler
      */
     public function handle($command)
     {
-        $project = Project::addProject($command->name, $command->description);
+        $project = Project::addProject($command->title, $command->description, $command->slug);
 
         $this->project->saveProject($project);
 

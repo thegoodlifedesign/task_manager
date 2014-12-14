@@ -3,7 +3,7 @@
 use Illuminate\Contracts\Auth\Guard;
 use TGLD\Http\Requests\Request;
 
-class UpdateTaskRequest extends Request
+class AcceptTaskRequest extends Request
 {
     protected $auth;
 
@@ -20,12 +20,7 @@ class UpdateTaskRequest extends Request
     public function rules()
     {
         return [
-            'title' => 'required',
-            'description' => 'required',
-            'project' => 'required',
-            'assigned_to' => 'required',
-            'assigned_from' => 'required',
-            'priority' => 'required',
+            'task_id' => 'required',
         ];
     }
 

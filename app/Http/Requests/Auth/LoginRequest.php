@@ -1,4 +1,6 @@
-<?php namespace TGLD\Http\Requests;
+<?php namespace TGLD\Http\Requests\Auth;
+
+use TGLD\Http\Requests\Request;
 
 class LoginRequest extends Request {
 

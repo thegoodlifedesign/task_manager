@@ -3,8 +3,8 @@
 use Illuminate\Contracts\Auth\Guard;
 use Laracasts\Commander\CommanderTrait;
 use TGLD\Http\Controllers\CommandController;
-use TGLD\Http\Requests\LoginRequest;
-use TGLD\Http\Requests\RegisterRequest;
+use TGLD\Http\Requests\Auth\LoginRequest;
+use TGLD\Http\Requests\Auth\RegisterRequest;
 use TGLD\Members\UseCases\MemberRegisterCommand;
 use TGLD\Utilities\Flash\Flash;
 

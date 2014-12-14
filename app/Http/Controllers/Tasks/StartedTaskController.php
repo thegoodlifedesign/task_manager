@@ -1,6 +1,6 @@
 <?php namespace TGLD\Http\Controllers\Tasks;
 
-use TGLD\Http\Requests\StartTaskRequest;
+use TGLD\Http\Requests\Tasks\StartTaskRequest;
 use TGLD\Tasks\UseCases\StartTaskCommand;
 use TGLD\Utilities\Flash\Flash;
 

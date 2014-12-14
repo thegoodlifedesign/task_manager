@@ -1,6 +1,9 @@
-<?php namespace TGLD\Http\Requests;
+<?php namespace TGLD\Http\Requests\Auth;
 
-class RegisterRequest extends Request {
+use Illuminate\Http\Request;
+
+class RegisterRequest extends Request
+{
 
     /**
      * Get the validation rules that apply to the request.

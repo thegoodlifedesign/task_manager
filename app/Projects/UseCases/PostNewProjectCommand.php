@@ -3,14 +3,14 @@
 
 class PostNewProjectCommand
 {
-    public $name;
+    public $title;
 
     public $description;
 
-    function __construct($description, $name)
+    function __construct($description, $title)
     {
         $this->description = $description;
-        $this->name = $name;
+        $this->title = $title;
     }
 
 

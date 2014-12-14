@@ -1,6 +1,9 @@
-<?php namespace TGLD\Http\Requests;
+<?php namespace TGLD\Http\Requests\Projects;
 
-class ProjectRequest extends Request {
+use TGLD\Http\Requests\Request;
+
+class ProjectRequest extends Request
+{
 
 	/**
 	 * Get the validation rules that apply to the request.
@@ -10,7 +13,7 @@ class ProjectRequest extends Request {
 	public function rules()
 	{
 		return [
-			'name' => 'required',
+			'title' => 'required',
 			'description' => 'required',
 		];
 	}

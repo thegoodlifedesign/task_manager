@@ -1,8 +1,16 @@
-<?php namespace TGLD\Http\Requests;
+<?php namespace TGLD\Http\Requests\Tasks;
 
-use Illuminate\Support\Facades\Auth;
+use Illuminate\Contracts\Auth\Guard;
+use TGLD\Http\Requests\Request;
 
-class AddTaskCommentRequest extends Request {
+class AddTaskCommentRequest extends Request
+{
+    protected $auth;
+
+    function __construct(Guard $auth)
+    {
+        $this->auth = $auth;
+    }
 
     /**
      * Get the validation rules that apply to the request.
@@ -24,7 +32,7 @@ class AddTaskCommentRequest extends Request {
      */
     public function authorize()
     {
-        if(Auth::check())
+        if($this->auth->check())
         {
             return true;
         }
