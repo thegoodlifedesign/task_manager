@@ -21,8 +21,10 @@ class DeleteTaskCommandHandler implements CommandHandler
      */
     public function handle($command)
     {
-        $task = Task::deleteTask($command->task_id);
+        $task_id = Task::deleteTask($command->task_id);
 
-        $this->taskRepo->deleteTask($task);
+        $task = $this->taskRepo->deleteTask($task_id);
+
+        return $task;
     }
 }

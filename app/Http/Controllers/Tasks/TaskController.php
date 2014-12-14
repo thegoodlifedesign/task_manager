@@ -1,5 +1,6 @@
 <?php namespace TGLD\Http\Controllers\Tasks;
 
+use Illuminate\Contracts\Auth\Guard;
 use TGLD\Http\Requests\AddTaskRequest;
 use TGLD\Http\Requests\DeleteTaskRequest;
 use TGLD\Http\Requests\UpdateTaskRequest;
@@ -105,15 +106,16 @@ class TaskController extends AbstractTaskController
      * Remove the specified resource from storage.
      *
      * @param DeleteTaskRequest $request
+     * @param Guard $auth
      * @internal param int $id
      * @return \Illuminate\Http\RedirectResponse
      */
     public function destroy(DeleteTaskRequest $request)
     {
-        $this->execute(DeleteTaskCommand::class);
+        $task = $this->execute(DeleteTaskCommand::class);
 
         Flash::message('Task has been deleted');
 
-        return redirect()->back();
+            return redirect()->route('assigned.tasks', $attributes = ['username' => $task->assignee->username]);
     }
 }

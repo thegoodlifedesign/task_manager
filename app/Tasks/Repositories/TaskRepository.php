@@ -170,6 +170,8 @@ class TaskRepository extends EloquentRepository
         $itask = $this->model->where('id', '=', $task->id)->first();
 
         $itask->delete();
+
+        return $itask;
     }
 
 }
