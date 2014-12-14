@@ -38,7 +38,11 @@ class HelperServiceProvider extends ServiceProvider
 
     public function userHelper()
     {
-        $this->app->bind('userHelpers', function(){return new UserHelper;});
+        $this->app->bind('userHelpers', function()
+        {
+            $auth = $this->app->make('Illuminate\Contracts\Auth\Guard');
+            return new UserHelper($auth, new  MemberRepository(new Member));
+        });
     }
 
     public function taskFormHelper()
