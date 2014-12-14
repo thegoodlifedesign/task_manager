@@ -5,6 +5,7 @@ use Laracasts\Commander\Events\EventGenerator;
 use TGLD\Tasks\Events\TaskWasAccepted;
 use TGLD\Tasks\Events\TaskWasCompleted;
 use TGLD\Tasks\Events\TaskWasStarted;
+use TGLD\Tasks\Events\TaskWasUpdated;
 
 class Task extends Model
 {
@@ -70,7 +71,6 @@ class Task extends Model
 
     /**
      * @param $title
-     * @param $file_url
      * @param $description
      * @param $assigned_from
      * @param $assigned_to
@@ -80,11 +80,11 @@ class Task extends Model
      * @param $slug
      * @return static
      */
-    public static function updateTask($title, $file_url, $description, $assigned_from, $assigned_to, $project_id, $priority, $id, $slug)
+    public static function updateTask($title, $description, $assigned_from, $assigned_to, $project_id, $priority, $id, $slug)
     {
-        $task = new static(compact('title', 'file_url', 'description', 'assigned_from', 'assigned_to', 'project_id', 'priority', 'id', 'slug'));
+        $task = new static(compact('title', 'description', 'assigned_from', 'assigned_to', 'project_id', 'priority', 'id', 'slug'));
 
-        // $task->raise(new TaskWasUpdated($task));
+        $task->raise(new TaskWasUpdated($task));
 
         return $task;
     }

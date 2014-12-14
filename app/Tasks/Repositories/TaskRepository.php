@@ -1,6 +1,5 @@
 <?php namespace TGLD\Tasks\Repositories;
 
-
 use Carbon\Carbon;
 use Illuminate\Auth\Guard;
 use TGLD\Core\EloquentRepository;
@@ -45,7 +44,6 @@ class TaskRepository extends EloquentRepository
 
         $taski->title = $task->title;
         $taski->slug = $task->slug;
-        $taski->file_url = $task->file_url;
         $taski->description = $task->description;
         $taski->assigned_from = $task->assigned_from;
         $taski->project_id = $task->project_id;

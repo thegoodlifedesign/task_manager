@@ -38,10 +38,6 @@
                         <?php App::make('taskFormHelpers')->updatePriority($task->priority); ?>
                     </select>
                 </div>
-                <div class="form-group">
-                    <label for="taskFile">Task Files</label>
-                    <input type="file" name="file_url" class="form-control" id="taskFile" >
-                </div>
                 <button class="btn btn-primary" type="submit">Update Task</button>
             {!! Form::close() !!}
         </div>

@@ -24,15 +24,11 @@ class UpdateTaskCommandHandler implements CommandHandler
      */
     public function handle($command)
     {
-        $file_name = '';
-
-        if(!is_null($command->file_url)) $file_name = date("m.d.y") .'-'.  $command->file_url->getClientOriginalName();
-
-        $task = Task::updateTask($command->title, $file_name, $command->description, $command->assigned_from, $command->assigned_to, $command->project, $command->priority, $command->id, $command->slug);
+        $task = Task::updateTask($command->title, $command->description, $command->assigned_from, $command->assigned_to, $command->project, $command->priority, $command->id, $command->slug);
 
         $this->task->updateTask($task);
 
-        //$this->dispatchEventsFor($task);
+        $this->dispatchEventsFor($task);
 
         return $task;
     }

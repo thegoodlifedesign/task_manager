@@ -90,13 +90,13 @@ class TaskController extends AbstractTaskController
     public function update(UpdateTaskRequest $request)
     {
         $task =  $this->execute(UpdateTaskCommand::class, null, [
-            'RL\Decorators\TaskFormSanitizer',
-            'RL\Decorators\FileUploader'
+            'TGLD\Decorators\TaskFormSanitizer',
+            'TGLD\Decorators\TitleSlugGenerator',
         ]);
 
         Flash::message('Task was updated!');
 
-        return redirect()->route('update-task', $attributes = ['project' => $task->project->slug, 'task' => $task->slug]);
+        return redirect()->route('update.task', $attributes = ['project' => $task->project->slug, 'task' => $task->slug]);
     }
 
     /**
