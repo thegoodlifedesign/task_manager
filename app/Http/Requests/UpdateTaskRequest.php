@@ -1,7 +1,15 @@
 <?php namespace TGLD\Http\Requests;
 
+use Illuminate\Contracts\Auth\Guard;
 
-class UpdateTaskRequest extends Request {
+class UpdateTaskRequest extends Request
+{
+    protected $auth;
+
+    function __construct(Guard $auth)
+    {
+        $this->auth = $auth;
+    }
 
     /**
      * Get the validation rules that apply to the request.
@@ -27,7 +35,7 @@ class UpdateTaskRequest extends Request {
      */
     public function authorize()
     {
-        if(Auth::check())
+        if($this->auth->check())
         {
             return true;
         }

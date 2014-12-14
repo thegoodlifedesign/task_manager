@@ -126,6 +126,6 @@ class TaskController extends AbstractTaskController
     {
         $file = public_path(). "/media/file_uploads/$download";
 
-        return Response::download($file, $download);
+        return response()->download($file, $download);
     }
 }

@@ -17,6 +17,8 @@ class FileUploader implements  CommandBus
         {
             $file_name = $this->makeName($command);
 
+            $this->moveFile($command, $file_name);
+
             $command->file_url = $file_name;
 
             return $command;

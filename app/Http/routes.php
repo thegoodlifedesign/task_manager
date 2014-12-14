@@ -1,6 +1,5 @@
 <?php
 
-
 /*
 |--------------------------------------------------------------------------
 | Password Reset Controllers
@@ -15,9 +14,6 @@
 Route::controllers([
 	'password' => 'Auth\PasswordController',
 ]);
-
-
-
 
 
 /*
@@ -70,7 +66,7 @@ $router->post('task/add-task', ['as' => 'add.task', 'uses' => 'Tasks\TaskControl
 /*
  * UPDATE
  */
-$router->post('task/update-task', ['as' => 'update.task', 'uses' => 'Tasks\TaskController@update']);
+$router->post('{project}/{task}/update', ['as' => 'update.task', 'uses' => 'Tasks\TaskController@update']);
 $router->get('{project}/{task}/update', ['as' => 'update.task', 'uses' => 'Tasks\TaskController@edit']);
 /*
  * DELETE
@@ -101,8 +97,7 @@ $router->post('task/complete-task', ['as' => 'complete.task', 'uses' => 'Tasks\C
 /*
  * DOWNLOAD
  */
-$router->get('{project}/{task}/{download}', ['as' => 'download.task', 'uses' => 'Tasks\TaskController@getDownloadFile']);
-
+$router->get('task/download/{file}', ['as' => 'download.task', 'uses' => 'Tasks\TaskController@getDownloadFile']);
 
 
 

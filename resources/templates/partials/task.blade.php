@@ -31,7 +31,7 @@
             <?php $task_id = [];?>
                 @foreach($row as $task)
                     <div class="col-md-4">
-                        <a href="{!! URL::route('task-detail', $attributes = ['project' => $task->project->slug, 'task' => $task->slug]) !!}">
+                        <a href="{!! URL::route('task.detail', $attributes = ['project' => $task->project->slug, 'task' => $task->slug]) !!}">
                         <div class="panel panel-default">
                           <div class="panel-heading">
                             <h3 class="panel-title">{{$task->title}}.</h3>
