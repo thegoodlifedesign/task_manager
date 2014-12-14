@@ -63,8 +63,8 @@ $router->post('auth/activate_user/{token}', ['as' => 'auth.accept.user', 'uses' 
 /*
  * ADD TASK
  */
-$router->get('task/add-task', ['as' => 'add.task', 'uses' => 'Tasks\TaskController@create']);
-$router->post('task/add-task', ['as' => 'add.task', 'uses' => 'Tasks\TaskController@store']);
+$router->get('task/add', ['as' => 'add.task', 'uses' => 'Tasks\TaskController@create']);
+$router->post('task/add', ['as' => 'add.task', 'uses' => 'Tasks\TaskController@store']);
 /*
  * UPDATE
  */
@@ -73,6 +73,7 @@ $router->get('{project}/{task}/update', ['as' => 'update.task', 'uses' => 'Tasks
 /*
  * DELETE
  */
+$router->post('task/delete', ['as' => 'delete.task', 'uses' => 'Tasks\TaskController@destroy']);
 /*
  * ASSIGNED TASKS
  */

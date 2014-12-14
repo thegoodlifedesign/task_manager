@@ -62,6 +62,11 @@ class Task extends Model
         return new static(compact('title', 'file_url', 'description', 'assigned_from', 'assigned_to', 'project_id', 'priority', 'slug'));
     }
 
+    /**
+     * @param $comment
+     * @param $task_id
+     * @return static
+     */
     public static function postComment($comment, $task_id)
     {
         $comments = new static(compact('comment', 'task_id'));
@@ -130,6 +135,13 @@ class Task extends Model
         $task->raise(new TaskWasCompleted($task));
 
         return $task;
+    }
+
+    public static function deleteTask($id)
+    {
+        $task_id = new static(compact('id'));
+
+        return $task_id;
     }
 
     /*

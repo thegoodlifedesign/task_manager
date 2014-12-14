@@ -8,7 +8,15 @@
                         <a href="{!! URL::route('task.detail', $attributes = ['project' => $task->project->slug, 'task' => $task->slug]) !!}">
                         <div class="panel panel-default">
                           <div class="panel-heading">
-                            <h3 class="panel-title">{{$task->title}}.</h3>
+                            <h3 class="panel-title left">{{$task->title}}.</h3>
+                            @if(!App::make('taskHelpers')->isTaskAccepted($task))
+                                <h3 class="panel-title">
+                                    {!! Form::open(['url' => URL::route('delete.task')]) !!}
+                                        <input type="hidden" name="task_id" value="{{$task->id}}">
+                                        <input class="right btn btn-danger" type="submit" value="x">
+                                    {!! Form::close() !!}
+                                </h3>
+                            @endif
                           </div>
                           <div class="panel-body">
                             <p>{{$task->description}}</p>

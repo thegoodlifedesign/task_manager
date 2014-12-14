@@ -15,6 +15,7 @@ body {
 
 .panel-heading{
     background: #333 !important;
+    min-height: 35px;
 }
 
 .invisible{

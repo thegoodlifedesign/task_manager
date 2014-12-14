@@ -165,13 +165,11 @@ class TaskRepository extends EloquentRepository
         return  $this->model->with('assignedUser', 'assignee', 'project')->select('id', 'slug')->where('slug', '=', $slug)->get();
     }
 
-    public function slugExist($slug)
+    public function deleteTask($task)
     {
-        $task = $this->model->where('slug', '=', $slug)->first();
+        $itask = $this->model->where('id', '=', $task->id)->first();
 
-        if(!$task) return false;
-
-        return true;
+        $itask->delete();
     }
 
 }

@@ -1,6 +1,5 @@
 <?php namespace TGLD\Decorators;
 
-
 use Laracasts\Commander\CommandBus;
 use TGLD\Tasks\Repositories\TaskRepository;
 use TGLD\Utilities\Sluger\Sluger;

@@ -9,6 +9,14 @@
                     <p>{{$task->description}}</p>
                     @if(App::make('userHelpers')->isUserTaskOwner($task))
                         <a class="btn btn-default " href="{!! URL::route('update.task', $attributes = ['project' => $task->project->slug, 'task' => $task->slug]) !!}">Update</a>
+                            @if(!App::make('taskHelpers')->isTaskAccepted($task))
+                                <h3 class="panel-title">
+                                    {!! Form::open(['url' => URL::route('delete.task')]) !!}
+                                        <input type="hidden" name="task_id" value="{{$task->id}}">
+                                        <input class="right btn btn-danger" type="submit" value="Delete">
+                                    {!! Form::close() !!}
+                                </h3>
+                            @endif
                     @endif
                 </div>
                 <div class="task-stats">
