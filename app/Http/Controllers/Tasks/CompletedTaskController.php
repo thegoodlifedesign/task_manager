@@ -18,7 +18,7 @@ class CompletedTaskController extends AbstractTaskController
     {
         $tasks = $this->taskService->completedTasks($username);
 
-        return view('task.started-tasks', compact('tasks', 'username'));
+        return view('task.completed-tasks', compact('tasks', 'username'));
     }
 
     /**

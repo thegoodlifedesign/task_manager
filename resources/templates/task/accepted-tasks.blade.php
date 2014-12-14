@@ -2,5 +2,5 @@
 
 @section('adminContent')
 <?php $stage = 'start'; ?>
-@include('partials.task')
+@include('partials.tasks-with-button')
 @stop
