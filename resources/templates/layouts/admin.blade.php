@@ -9,8 +9,6 @@
             <div id="sidebar-wrapper">
                 <ul class="sidebar-nav">
                     <li class="sidebar-brand"><a href="#">Task Manager Menu</a></li>
-                    <li><a href="{!! URL::route('projects') !!}">Projects</a></li>
-                    <li><a href="{!! URL::route('add.task') !!}">Add Task</a></li>
                     <li><a href="{!! URL::route('completed.tasks', $attributes = ['username' => Auth::user()->username]) !!}">Completed Tasks</a></li>
                     <li><a href="{!! URL::route('started.tasks', $attributes = ['username' => Auth::user()->username]) !!}">Started Tasks</a></li>
                     <li><a href="{!! URL::route('accepted.tasks', $attributes = ['username' => Auth::user()->username]) !!}">Accepted Tasks</a></li>

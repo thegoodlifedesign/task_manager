@@ -40,7 +40,13 @@
                         <?php App::make('userHelpers')->getUserDropdown(); ?>
                       </ul>
                     </li>
-                    <li><a class="" href="{!! URL::route('add.project') !!}">Add Project</a></li>
+                    <li class="dropdown"><a href="{!! URL::route('projects') !!}" class="dropdown-toggle" data-toggle="dropdown"  aria-expanded="false">Projects <span class="caret"></span></a>
+                      <ul class="dropdown-menu" role="menu">
+                        <li><a class="" href="{!! URL::route('projects') !!}">View All</a></li>
+                        <li><a class="" href="{!! URL::route('add.project') !!}">Add Project</a></li>
+                      </ul>
+                    </li>
+                    <li><a href="{!! URL::route('add.task') !!}">Add Task</a></li>
                     <li><a class="" href="{!! URL::route('auth.logout') !!}">Logout</a></li>
                 @else
                     <li><a class="" href="{!! URL::route('auth.login') !!}">Login</a></li>
