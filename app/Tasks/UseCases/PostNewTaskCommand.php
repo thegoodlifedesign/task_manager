@@ -17,7 +17,7 @@ class PostNewTaskCommand
 
     public $file_url;
 
-    function __construct($assigned_from, $assigned_to, $description, $priority, $project, $title, $file_url)
+    function __construct($assigned_from, $assigned_to, $description, $priority, $project, $title, $file_url = null)
     {
         $this->assigned_from = $assigned_from;
         $this->assigned_to = $assigned_to;
@@ -26,6 +26,7 @@ class PostNewTaskCommand
         $this->project = $project;
         $this->title = $title;
         $this->file_url = $file_url;
+
     }
 
 

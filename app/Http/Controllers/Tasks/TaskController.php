@@ -37,7 +37,18 @@ class TaskController extends AbstractTaskController
      */
     public function store(AddTaskRequest $request)
     {
-        $this->execute(PostNewTaskCommand::class, null, [
+        $input = $request->all();
+
+        $this->execute(new PostNewTaskCommand(
+            $input['assigned_from'],
+            $input['assigned_to'],
+            $input['assigned_from'],
+            $input['project'],
+            $input['title'],
+            $input['description'],
+            $input['priority'],
+            $request->file('file_url')
+            ), null, [
             'TGLD\Decorators\FileUploader',
             'TGLD\Decorators\TaskFormSanitizer',
             'TGLD\Decorators\TitleSlugGenerator',

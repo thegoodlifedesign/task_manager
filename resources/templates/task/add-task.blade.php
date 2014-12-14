@@ -44,7 +44,7 @@
                 </div>
                 <div class="form-group">
                     <label for="taskFile">Task Files</label>
-                    <input type="file" name="file_url" class="form-control" id="taskFile" >
+                    <input type="file" name="file_url" value="null" class="form-control" id="taskFile" >
                 </div>
                 <button class="btn btn-default" type="submit">Add Task</button>
             {!! Form::close() !!}
