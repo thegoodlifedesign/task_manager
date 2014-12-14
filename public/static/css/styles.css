@@ -64,13 +64,11 @@ body {
 
 
 #sideBar{
-    width: 10%;
-    float: left;
     display: block;
     padding: 20px;
     background-color: #333;
     border-right: 1px solid #eee;
-    height: 1000px;
+    min-height: 1000px;
 }
 .navbar-default .navbar-brand, .navbar-default .navbar-nav>li>a {
     color: #fff;
@@ -159,8 +157,6 @@ a:hover{
 }
 
 #mainBody {
-    width: 90%;
-    float: left;
     min-height: 1000px;
 }
 
