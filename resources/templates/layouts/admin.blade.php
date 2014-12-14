@@ -4,15 +4,15 @@
 
 <div id="adminWrapper">
      <div id="wrapper">
-
+        <?phpdd($tasks);?>
             <!-- Sidebar -->
             <div id="sidebar-wrapper">
                 <ul class="sidebar-nav">
                     <li class="sidebar-brand"><a href="#">Task Manager Menu</a></li>
-                    <li><a href="{!! URL::route('completed.tasks', $attributes = ['username' => Auth::user()->username]) !!}">Completed Tasks</a></li>
-                    <li><a href="{!! URL::route('started.tasks', $attributes = ['username' => Auth::user()->username]) !!}">Started Tasks</a></li>
-                    <li><a href="{!! URL::route('accepted.tasks', $attributes = ['username' => Auth::user()->username]) !!}">Accepted Tasks</a></li>
-                    <li><a href="{!! URL::route('assigned.tasks', $attributes = ['username' => Auth::user()->username]) !!}">Assigned Tasks</a></li>
+                    <li><a href="{!! URL::route('completed.tasks', $attributes = ['username' => Route::input('username') ?: Auth::user()->username]) !!}">Completed Tasks</a></li>
+                    <li><a href="{!! URL::route('started.tasks', $attributes = ['username' => Route::input('username') ?: Auth::user()->username]) !!}">Started Tasks</a></li>
+                    <li><a href="{!! URL::route('accepted.tasks', $attributes = ['username' => Route::input('username') ?: Auth::user()->username]) !!}">Accepted Tasks</a></li>
+                    <li><a href="{!! URL::route('assigned.tasks', $attributes = ['username' => Route::input('username') ?: Auth::user()->username]) !!}">Assigned Tasks</a></li>
                 </ul>
             </div>
             <!-- /#sidebar-wrapper -->

@@ -1,5 +1,8 @@
 <?php namespace TGLD\Http\Controllers\Tasks;
 
+
+use Illuminate\Support\Facades\Route;
+
 class AssignedTaskController extends AbstractTaskController
 {
 
