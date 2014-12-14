@@ -10,6 +10,7 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css">
     {!! HTML::style('static/css/styles.css') !!}
     {!! HTML::style('static/css/simple-sidebar.css') !!}
+    {!! HTML::style('static/css/responsive.css') !!}
     {!! HTML::script('static/js/vendor/modernizr.js') !!}
   </head>
   <body>

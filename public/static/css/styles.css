@@ -166,3 +166,6 @@ a:hover{
     width: 100%;
     height: 50px;
 }
+#toggleMenu{
+    display: none;
+}
