@@ -1,5 +1,7 @@
 <?php
 
+$router->get('/', ['as' => 'home', 'uses' => 'HomeController@showHome']);
+
 /*
 |--------------------------------------------------------------------------
 | Password Reset Controllers
