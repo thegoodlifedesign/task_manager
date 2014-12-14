@@ -114,7 +114,6 @@ class TaskController extends AbstractTaskController
      * Get the download link to a file
      * in a task
      *
-     * @Get("{project}/{task}/{download}", as="download-task")
      *
      * @param $project
      * @param $task

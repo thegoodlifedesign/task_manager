@@ -48,7 +48,7 @@
                         <tr>
                             <th>Files:&nbsp;</th>
                             @if(App::make('taskHelpers')->TaskHasFile($task))
-                                <td><a href="{!! URL::route('download.task', $attributes = ['download' => $task->file_url]) !!}"><i class="icon-download-alt"> </i> Download File</a></td>
+                                <td><a href="/media/file_uploads/<?php echo $task->file_url ?>"><i class="icon-download-alt"> </i> Download File</a></td>
                             @else
                                 <td>no files</td>
                             @endif
