@@ -9,6 +9,7 @@
     <!-- Optional theme -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css">
     {!! HTML::style('static/css/styles.css') !!}
+    {!! HTML::style('static/css/simple-sidebar.css') !!}
     {!! HTML::script('static/js/vendor/modernizr.js') !!}
   </head>
   <body>
@@ -64,5 +65,12 @@
     {!! HTML::script('https://ajax.googleapis.com/ajax/libs/angularjs/1.2.26/angular.min.js') !!}
     {!! HTML::script('//cdnjs.cloudflare.com/ajax/libs/angular.js/1.2.20/angular-route.js') !!}
     {!! HTML::script('//cdnjs.cloudflare.com/ajax/libs/angular.js/1.2.20/angular-resource.js') !!}
+    <!-- Menu Toggle Script -->
+            <script>
+            $("#menu-toggle").click(function(e) {
+                e.preventDefault();
+                $("#wrapper").toggleClass("toggled");
+            });
+            </script>
   </body>
 </html>

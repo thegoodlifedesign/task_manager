@@ -3,10 +3,12 @@
 @section('content')
 
 <div id="adminWrapper">
-    <div class="row">
-        <div class="col-md-2">
-            <div id="sideBar">
-                <ul class="nav nav-sidebar">
+     <div id="wrapper">
+
+            <!-- Sidebar -->
+            <div id="sidebar-wrapper">
+                <ul class="sidebar-nav">
+                    <li class="sidebar-brand"><a href="#">Task Manager Menu</a></li>
                     <li><a href="{!! URL::route('projects') !!}">Projects</a></li>
                     <li><a href="{!! URL::route('add.task') !!}">Add Task</a></li>
                     <li><a href="{!! URL::route('completed.tasks', $attributes = ['username' => Auth::user()->username]) !!}">Completed Tasks</a></li>
@@ -15,13 +17,22 @@
                     <li><a href="{!! URL::route('assigned.tasks', $attributes = ['username' => Auth::user()->username]) !!}">Assigned Tasks</a></li>
                 </ul>
             </div>
-        </div>
-        <div class="col-md-10">
-            <div id="mainBody">
-                @yield('adminContent')
+            <!-- /#sidebar-wrapper -->
+
+            <!-- Page Content -->
+            <div id="page-content-wrapper">
+                <div class="container-fluid">
+                    <div class="row">
+                        <div class="col-lg-12">
+                            @yield('adminContent')
+                        </div>
+                    </div>
+                </div>
             </div>
+            <!-- /#page-content-wrapper -->
+
         </div>
-    </div>
+        <!-- /#wrapper -->
 </div>
 
 
