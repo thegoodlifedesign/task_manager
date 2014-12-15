@@ -6,28 +6,33 @@
                 @foreach($row as $task)
                     <div class="col-md-4">
                         <a href="{!! URL::route('task.detail', $attributes = ['project' => $task->project->slug, 'task' => $task->slug]) !!}">
-                        <div class="panel panel-default">
-                          <div class="panel-heading">
-                            <h3 class="panel-title left">{{$task->title}}.</h3>
-                            @if(!App::make('taskHelpers')->isTaskAccepted($task))
-                                <h3 class="panel-title">
-                                    {!! Form::open(['url' => URL::route('delete.task')]) !!}
-                                        <input type="hidden" name="task_id" value="{{$task->id}}">
-                                        <input class="right btn btn-danger" type="submit" value="x">
+                            <div class="panel panel-default">
+                              <div class="panel-heading panel-heading-<?php echo $task->priority; ?>">
+                                <h1 class="panel-title">{{ucwords($task->title)}}.</h1>
+                              </div>
+                              <div class="panel-body">
+                                <div class="body-panel">
+                                    <div class="left-body-panel">
+                                        <p>{{$task->description}}</p>
+                                    </div>
+                                    <div class="right-body-panel">
+                                        <p><strong>{{$task->project->title}}</strong></p>
+                                    </div>
+                                </div>
+                                <div class="task-options">
+                                    {!! Form::open(['url' => URL::route(''.$stage.'.task')]) !!}
+                                         <input type="hidden" name="task_id" value="{{$task->id}}">
+                                         <button class="check-mark-btn" type="submit">{!! HTML::image('static/img/checkmark.png') !!}</button>
                                     {!! Form::close() !!}
-                                </h3>
-                            @endif
-                          </div>
-                          <div class="panel-body">
-                            <p>{{$task->description}}</p>
-                            <p><strong>Project: </strong>{{$task->project->title}}</p>
-                            <p class=""><strong>Priority: </strong>{{$task->priority}}</p>
-                            {!! Form::open(['url' => URL::route(''.$stage.'.task')]) !!}
-                                <input type="hidden" name="task_id" value="{{$task->id}}">
-                                <input class="right btn btn-primary" type="submit" value="<?php echo $stage; ?>">
-                            {!! Form::close() !!}
-                          </div>
-                        </div>
+                                    @if( ! App::make('taskHelpers')->isTaskAccepted($task) and App::make('userHelpers')->isUserTaskOwner($task))
+                                        {!! Form::open(['url' => URL::route('delete.task')]) !!}
+                                             <input type="hidden" name="task_id" value="{{$task->id}}">
+                                             <button class="decline-mark-btn" type="submit">{!! HTML::image('static/img/decline-mark.png') !!}</button>
+                                        {!! Form::close() !!}
+                                    @endif
+                                </div>
+                              </div>
+                            </div>
                         </a>
                     </div>
                 @endforeach
@@ -38,20 +43,23 @@
             <div class="row">
             <?php $task_id = [];?>
                 @foreach($row as $task)
-                    <div class="col-md-4">
-                        <a href="{!! URL::route('task.detail', $attributes = ['project' => $task->project->slug, 'task' => $task->slug]) !!}">
-                        <div class="panel panel-default">
-                          <div class="panel-heading">
-                            <h3 class="panel-title">{{$task->title}}.</h3>
-                          </div>
-                          <div class="panel-body">
-                            <p>{{$task->description}}</p>
-                            <p><strong>Project: </strong>{{$task->project->title}}</p>
-                            <p class=""><strong>Priority: </strong>{{$task->priority}}</p>
-                          </div>
-                        </div>
-                        </a>
-                    </div>
+                     <div class="col-md-4">
+                         <a href="{!! URL::route('task.detail', $attributes = ['project' => $task->project->slug, 'task' => $task->slug]) !!}">
+                             <div class="panel panel-default">
+                               <div class="panel-heading panel-heading-<?php echo $task->priority; ?>">
+                                 <h1 class="panel-title">{{ucwords($task->title)}}.</h1>
+                               </div>
+                               <div class="panel-body">
+                                 <div class="left-body-panel">
+                                     <p>{{$task->description}}</p>
+                                 </div>
+                                 <div class="right-body-panel">
+                                     <p><strong>{{$task->project->title}}</strong></p>
+                                 </div>
+                               </div>
+                             </div>
+                         </a>
+                     </div>
                 @endforeach
             </div>
         @endforeach

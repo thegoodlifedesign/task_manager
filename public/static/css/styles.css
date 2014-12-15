@@ -6,7 +6,7 @@
 body {
     min-height: 2000px;
     padding-top: 50px;
-    background: #f5f5f5;
+    background: #f7f7f7;
 }
 
 .panel-title{
@@ -14,7 +14,6 @@ body {
 }
 
 .panel-heading{
-    background: #333 !important;
     min-height: 35px;
 }
 
@@ -76,7 +75,10 @@ a:hover{
     color: #333;
 }
 .navbar{
-    background: #BB6060 !important;
+    background: #fd6a6a !important;
+}
+.navbar-default{
+    border: none;
 }
 .nav>li>a:hover, .nav>li>a:focus {
     background-color: #BB6060;
@@ -168,4 +170,186 @@ a:hover{
 }
 #toggleMenu{
     display: none;
+}
+
+/***************************************/
+/* TASK PANEL */
+/***************************************/
+.panel-heading-1, .panel-heading-2{
+    background: #cbfdc9 !important;
+}
+.panel-heading-3{
+    background: #f9e5d0 !important;
+}
+.panel-heading-4, .panel-heading-5{
+    background: #faafaf !important;
+}
+.panel-heading h1{
+    font-size: 30px;
+    color: #333333;
+}
+.left-body-panel{
+    float: left;
+    width: 75%;
+    overflow: hidden;
+    min-height: 100px;
+    max-height: 100px;
+}
+.right-body-panel{
+    float: left;
+    width: 25%;
+    text-align: right;
+}
+.check-mark-btn{
+    background: none;
+    border: none;
+    padding: 0;
+    float: left;
+    margin-right: 5%;
+}
+.decline-mark-btn{
+    background: none;
+    border: none;
+    padding: 0;
+    margin: 0;
+}
+.task-options{
+    margin-left: 85%;
+}
+.panel-default{
+    text-decoration: none;
+}
+.body-panel{
+    margin-bottom: 2%;
+    width: 100%;
+    min-height: 100px;
+}
+.body-panel p{
+    color: #929191;
+}
+.body-panel strong{
+    color: #333333;
+}
+.panel-heading{
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+}
+.panel{
+    border-radius: 5px;
+    -webkit-box-shadow: -4px 4px 7px rgba(0,0,0,.08);;
+    box-shadow: -4px 4px 7px rgba(0,0,0,.08);
+    background: #f5f4f4;
+}
+.panel-default{
+    border: none;
+}
+.panel-default>.panel-heading{
+    border: none;
+}
+.sidebar-nav li a{
+    color: #587174 !important;
+}
+/************************************************************/
+/*SIDE MENU*/
+/************************************************************/
+#cssmenu,
+#cssmenu ul,
+#cssmenu li,
+#cssmenu a {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    list-style: none;
+    font-weight: normal;
+    text-decoration: none;
+    line-height: 1;
+    font-size: 14px;
+    position: relative;
+}
+#cssmenu a {
+    line-height: 1.3;
+}
+
+#cssmenu > ul > li {
+    border-bottom: solid 1px #b6eef6;
+}
+#cssmenu > ul > li > a {
+    font-size: 14px;
+    display: block;
+    color: #587174;
+    border-top: none;=
+}
+#cssmenu > ul > li > a > span {
+    display: block;
+    padding: 12px 10px;
+    -webkit-border-radius: 4px;
+    -moz-border-radius: 4px;
+    border-radius: 4px;
+}
+#cssmenu > ul > li > a:hover {
+    text-decoration: none;
+}
+#cssmenu > ul > li.active {
+    border-bottom: none;
+}
+/* Sub menu */
+#cssmenu ul ul {
+    display: none;
+    background: #fff;
+}
+#cssmenu ul ul li {
+    padding: 0;
+    border-bottom: 1px solid #587174;
+    border-top: none;
+    background: #e6f3f6;
+}
+#cssmenu ul ul li a span{
+    color: #000;
+}
+#cssmenu ul ul li:last-child {
+    border-bottom: none;
+}
+#cssmenu ul ul a {
+    padding: 10px 10px 10px 25px;
+    display: block;
+    color: #676767;
+    font-size: 12px;
+    font-weight: normal;
+}
+#cssmenu ul ul a:before {
+    position: absolute;
+    left: 10px;
+    color: #e94f31;
+}
+#cssmenu ul ul a:hover {
+    color: #e94f31;
+}
+#cssmenu > ul > li.has-sub > a#taskIcon span{
+    background: url("../img/task-icon.png") no-repeat;
+}
+#cssmenu > ul > li.has-sub > a#projectIcon span{
+    background: url("../img/project-icon.png") no-repeat;
+}
+#cssmenu > ul > li.has-sub > a#addressBookIcon span{
+    background: url("../img/address-book-icon.png") no-repeat;
+}
+#cssmenu > ul > li.has-sub > a#printIcon span{
+    background: url("../img/print-icon.png") no-repeat;
+}
+#cssmenu > ul > li.has-sub > a#addIcon span{
+    background: url("../img/add-icon.png") no-repeat;
+}
+#cssmenu > ul > li.has-sub > a span{
+    padding: 0;
+    margin: 10px 0;
+    padding-left: 40px;
+    height: 23px;
+    margin-left: 5%;
+    padding-top: 4px;
+    font-size: 15px;
+}
+
+#sidebarBottomArrow{
+    float: right;
+    margin-right: 15%;
 }

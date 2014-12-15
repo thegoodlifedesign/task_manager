@@ -8,6 +8,7 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
     <!-- Optional theme -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css">
+    <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
     {!! HTML::style('static/css/styles.css') !!}
     {!! HTML::style('static/css/simple-sidebar.css') !!}
     {!! HTML::style('static/css/responsive.css') !!}
@@ -75,6 +76,7 @@
     {!! HTML::script('static/js/vendor/jquery.js') !!}
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
     {!! HTML::script('static/js/acceptTask.js') !!}
+    {!! HTML::script('static/js/sidebar.js') !!}
     {!! HTML::script('https://ajax.googleapis.com/ajax/libs/angularjs/1.2.26/angular.min.js') !!}
     {!! HTML::script('//cdnjs.cloudflare.com/ajax/libs/angular.js/1.2.20/angular-route.js') !!}
     {!! HTML::script('//cdnjs.cloudflare.com/ajax/libs/angular.js/1.2.20/angular-resource.js') !!}
