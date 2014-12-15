@@ -15,6 +15,7 @@ class CreateUserAssignedTaskTable extends Migration {
 		Schema::create('user_assigned_task', function(Blueprint $table)
 		{
 			$table->increments('id');
+			$table->boolean('denied')->default(0);
 			$table->integer('task_id')->unsigned()->index();
 			$table->foreign('task_id')->references('id')->on('tasks')->onDelete('cascade');
 			$table->integer('user_id')->unsigned()->index();

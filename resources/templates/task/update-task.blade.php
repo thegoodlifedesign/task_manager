@@ -33,10 +33,16 @@
                     <?php App::make('taskFormHelpers')->updateUsers($task); ?>
                 </div>
                 <div class="form-group">
-                    <label for="taskPriority">Priority</label>
-                    <select class="form-control" id="taskPriority" name="priority">
-                        <?php App::make('taskFormHelpers')->updatePriority($task->priority); ?>
-                    </select>
+                    <label for="taskRelatedLink">Related Link</label>
+                    <input type="text" class="form-control" id="taskRelatedLink" name="related_link" value="{{$task->taskDetails->related_link}}">
+                </div>
+                <div class="form-group">
+                    <label for="taskWebsiteLink">Website Link</label>
+                    <input type="text" class="form-control" id="taskWebsiteLink" name="website_link" value="{{$task->taskDetails->website_link}}">
+                </div>
+                <div class="form-group">
+                    <label for="taskDueDate">Website Link</label>
+                    <input type="date" class="form-control" id="taskDueDate" name="due_date" value="{{$task->taskDetails->due_date}}">
                 </div>
                 <button class="btn btn-primary" type="submit">Update Task</button>
             {!! Form::close() !!}

@@ -1,9 +1,11 @@
 <?php namespace TGLD\Tasks;
 
 use Illuminate\Database\Eloquent\Model;
+use Laracasts\Commander\Events\DispatchableTrait;
 use Laracasts\Commander\Events\EventGenerator;
 use TGLD\Tasks\Events\TaskWasAccepted;
 use TGLD\Tasks\Events\TaskWasCompleted;
+use TGLD\Tasks\Events\TaskWasPosted;
 use TGLD\Tasks\Events\TaskWasStarted;
 use TGLD\Tasks\Events\TaskWasUpdated;
 
@@ -16,7 +18,7 @@ class Task extends Model
      *
      * @var array
      */
-    protected $fillable = ['id', 'title', 'slug', 'file_url', 'description', 'assigned_from', 'assigned_to', 'project_id', 'priority'];
+    protected $fillable = ['id', 'title', 'slug', 'file_url', 'description', 'assigned_from', 'priority', 'assigned_to', 'project_id', 'due_date', 'related_link', 'website_link'];
 
 
     /*
@@ -47,13 +49,19 @@ class Task extends Model
      * @param $assigned_from
      * @param $assigned_to
      * @param $project_id
-     * @param $priority
+     * @param $due_date
      * @param $slug
+     * @param $related_link
+     * @param $website_link
      * @return static
      */
-    public static function addTask($title, $file_url, $description, $assigned_from, $assigned_to, $project_id, $priority, $slug)
+    public static function addTask($title, $file_url, $description, $assigned_from, $assigned_to, $project_id, $due_date, $slug, $related_link, $website_link)
     {
-        return new static(compact('title', 'file_url', 'description', 'assigned_from', 'assigned_to', 'project_id', 'priority', 'slug'));
+        $task = new static(compact('title', 'file_url', 'description', 'assigned_from', 'assigned_to', 'project_id', 'due_date', 'slug', 'related_link', 'website_link'));
+
+        $task->raise(new TaskWasPosted($task));
+
+        return $task;
     }
 
     /**
@@ -74,14 +82,16 @@ class Task extends Model
      * @param $assigned_from
      * @param $assigned_to
      * @param $project_id
-     * @param $priority
+     * @param $due_date
      * @param $id
      * @param $slug
+     * @param $related_link
+     * @param $website_link
      * @return static
      */
-    public static function updateTask($title, $description, $assigned_from, $assigned_to, $project_id, $priority, $id, $slug)
+    public static function updateTask($title, $description, $assigned_from, $assigned_to, $project_id, $due_date, $id, $slug, $related_link, $website_link)
     {
-        $task = new static(compact('title', 'description', 'assigned_from', 'assigned_to', 'project_id', 'priority', 'id', 'slug'));
+        $task = new static(compact('title', 'description', 'assigned_from', 'assigned_to', 'project_id', 'due_date', 'id', 'slug', 'related_link', 'website_link'));
 
         $task->raise(new TaskWasUpdated($task));
 
@@ -211,6 +221,14 @@ class Task extends Model
     public function comments()
     {
         return $this->morphMany('TGLD\Comments\Comment', 'commentable');
+    }
+
+    /**
+     * @return \Illuminate\Database\Eloquent\Relations\HasOne
+     */
+    public function taskDetails()
+    {
+        return $this->hasOne('TGLD\Tasks\TaskDetail');
     }
 
 }

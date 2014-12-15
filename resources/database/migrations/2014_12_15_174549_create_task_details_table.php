@@ -15,10 +15,12 @@ class CreateTaskDetailsTable extends Migration {
 		Schema::create('task_details', function(Blueprint $table)
 		{
 			$table->increments('id');
-			$table->integer('task_id')->nullable();
+			$table->integer('task_id')->unsigned();
 			$table->string('website_link');
-			$table->string('related_links');
+			$table->string('related_link');
 			$table->date('due_date');
+			$table->integer('completion_time')->nullable();
+			$table->timestamps();
 		});
 	}
 

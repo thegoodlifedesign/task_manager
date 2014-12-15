@@ -22,36 +22,28 @@
                 <div class="task-stats">
                     <table class="table table-striped table-hover">
                         <tr>
-                            <th>Created At:&nbsp;</th>
-                            <td>{{$task->created_at}}</td>
-                        </tr>
-                        <tr>
-                            <th>Accepted At:&nbsp;</th>
-                            @if(App::make('taskHelpers')->isTaskAccepted($task))
-                                <td>{{$task->accepted_at}}</td>
-                            @else
-                                <td>Task Has Not Been Accepted</td>
-                            @endif
-                        </tr>
-                        <tr>
-                            <th>Started At:&nbsp;</th>
-                            @if(App::make('taskHelpers')->isTaskStarted($task))
-                                <td>{{$task->started_at}}</td>
-                            @else
-                                <td>Task Has Not Been Started</td>
-                            @endif
-                        </tr>
-                        <tr>
-                            <th>Completed At:&nbsp;</th>
-                            @if(App::make('taskHelpers')->isTaskCompleted($task))
-                                <td>{{$task->completed_at}}</td>
-                            @else
-                                <td>Task Has Not Been Completed</td>
-                            @endif
-                        </tr>
-                        <tr>
                             <th>Assigned By:&nbsp;</th>
                             <td>{{$task->assignee->username}}</td>
+                        </tr>
+                        <tr>
+                        <th>Related Link:&nbsp;</th>
+                             @if($task->taskDetails->website_link == null)
+                                 <td>No website links</td>
+                             @else
+                                 <td><a href="{{$task->taskDetails->website_link}}">Website link</a></td>
+                             @endif
+                        </tr>
+                        <tr>
+                            <th>Related Link:&nbsp;</th>
+                            @if($task->taskDetails->related_link == null)
+                                <td>No related links</td>
+                            @else
+                                <td><a href="{{$task->taskDetails->related_link}}">Related Link</a></td>
+                            @endif
+                        </tr>
+                        <tr>
+                            <th>Due Date:&nbsp;</th>
+                            <td>{{$task->taskDetails->due_date}}</td>
                         </tr>
                         <tr>
                             <th>Files:&nbsp;</th>

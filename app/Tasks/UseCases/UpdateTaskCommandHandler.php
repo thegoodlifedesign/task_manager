@@ -24,7 +24,7 @@ class UpdateTaskCommandHandler implements CommandHandler
      */
     public function handle($command)
     {
-        $task = Task::updateTask($command->title, $command->description, $command->assigned_from, $command->assigned_to, $command->project, $command->priority, $command->id, $command->slug);
+        $task = Task::updateTask($command->title, $command->description, $command->assigned_from, $command->assigned_to, $command->project, $command->due_date, $command->id, $command->slug, $command->related_link, $command->website_link);
 
         $this->task->updateTask($task);
 

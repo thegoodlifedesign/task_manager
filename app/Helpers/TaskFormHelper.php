@@ -98,56 +98,17 @@ class TaskFormHelper
             $assigned_users[] = $t->assigned_to;
         }
 
-        $tasks = $this->taskStatRepo->getTaskAcceptedUsers($task->id);
-
-        $accepted_users = [];
-
-        foreach($tasks as $task)
-        {
-            $accepted_users[] = $task->accepted_by;
-        }
-
         foreach($members as $member)
         {
-            if(!in_array($member->id, $accepted_users))
+            if(! in_array($member->id, $assigned_users))
             {
-                if(!in_array($member->id, $assigned_users))
-                {
-                    echo "<div class='checkbox'>
-                              <label>
-                                <input name='assigned_to[]' type='checkbox' value='{$member->id}'>
-                                {$member->username}
-                              </label>
-                        </div>";
-                }
-                else
-                {
-                    echo "<div class='checkbox'>
-                              <label>
-                                <input name='assigned_to[]' type='checkbox' value='{$member->id}' checked>
-                                {$member->username}
-                              </label>
-                        </div>";
-                }
+                echo "<div class='checkbox'>
+                        <label>
+                        <input name='assigned_to[]' type='checkbox' value='{$member->id}'>{$member->username}
+                        </label>
+                      </div>";
             }
         }
     }
 
-    /**
-     * Display the selected priority on the task
-     * as well as the remaining priorities
-     * @param $priority
-     */
-    public function updatePriority($priority)
-    {
-        echo "<option value='$priority'>$priority</option>";
-
-        for($i = 1; $i <= 5; $i++)
-        {
-            if($i != $priority)
-            {
-                echo "<option value='$i'>$i</option>";
-            }
-        }
-    }
 }

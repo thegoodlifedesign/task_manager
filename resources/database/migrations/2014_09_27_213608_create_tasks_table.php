@@ -19,7 +19,7 @@ class CreateTasksTable extends Migration {
 			$table->integer('assigned_from')->nullable();
 			$table->string('title');
 			$table->text('description');
-			$table->integer('priority');
+			$table->integer('priority')->default(3);
 			$table->string('file_url')->nullable();
 			$table->integer('stage')->default(1);
 			$table->string('slug')->unique();

@@ -33,14 +33,16 @@
                     <?php App::make('taskFormHelpers')->selectUsers(); ?>
                 </div>
                 <div class="form-group">
-                    <label for="taskPriority">Priority</label>
-                    <select class="form-control" id="taskPriority" name="priority">
-                        <option value="1">1</option>
-                        <option value="2">2</option>
-                        <option value="3">3</option>
-                        <option value="4">4</option>
-                        <option value="5">5</option>
-                    </select>
+                    <label for="taskWebsiteLink">Website Link</label>
+                    <input type="text" class="form-control" id="taskWebsiteLink" name="website_link">
+                </div>
+                <div class="form-group">
+                    <label for="taskRelatedLink">Related Link</label>
+                    <input type="text" class="form-control" id="taskRelatedLink" name="related_link">
+                </div>
+                <div class="form-group">
+                    <label for="taskDueDate">Due Date</label>
+                    <input type="date" class="form-control" id="taskDueDate" name="due_date">
                 </div>
                 <div class="form-group">
                     <label for="taskFile">Task Files</label>

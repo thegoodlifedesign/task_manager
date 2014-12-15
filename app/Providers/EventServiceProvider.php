@@ -23,6 +23,7 @@ class EventServiceProvider extends ServiceProvider {
 	protected $scan = [
 		'TGLD\Listeners\Emails\EmailNotifier',
 		'TGLD\Listeners\TaskStatistics\TaskStatisticNotifier',
+		'TGLD\Listeners\TaskDetails\TaskDetailNotifier',
 	];
 
 }

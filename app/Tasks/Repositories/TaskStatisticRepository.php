@@ -6,8 +6,15 @@ use TGLD\Tasks\TaskStatistic;
 
 class TaskStatisticRepository extends EloquentRepository
 {
+    /**
+     * @var Guard
+     */
     protected $auth;
 
+    /**
+     * @param TaskStatistic $model
+     * @param Guard $auth
+     */
     function __construct(TaskStatistic $model, Guard $auth)
     {
         $this->auth = $auth;
@@ -21,6 +28,7 @@ class TaskStatisticRepository extends EloquentRepository
      */
     public function addTask($task)
     {
+
         foreach($task->assignedUsers as $user)
         {
             $taski = new TaskStatistic;
@@ -30,6 +38,11 @@ class TaskStatisticRepository extends EloquentRepository
 
             $taski->save();
         }
+    }
+
+    public function updateTask($task)
+    {
+        
     }
 
     /**
@@ -79,17 +92,32 @@ class TaskStatisticRepository extends EloquentRepository
         $task->save();
     }
 
+    /**
+     * @param $task
+     * @param $user_id
+     * @return mixed
+     */
     public function getAssignedTask($task, $user_id)
     {
         return $this->model->where('task_id', '=', $task->id)->where('assigned_to', '=', $user_id)->first();
     }
 
 
+    /**
+     * @param $task_id
+     * @param $user_id
+     * @return mixed
+     */
     public function getAcceptedTask($task_id, $user_id)
     {
         return $this->model->select('id', 'task_id', 'accepted_by', 'started_by')->where('task_id', '=', $task_id)->where('accepted_by', '=', $user_id)->first();
     }
 
+    /**
+     * @param $id
+     * @param $user_id
+     * @return mixed
+     */
     public function getStartedTask($id, $user_id)
     {
         return $this->model
@@ -100,6 +128,11 @@ class TaskStatisticRepository extends EloquentRepository
             ->first();
     }
 
+    /**
+     * @param $id
+     * @param $user_id
+     * @return mixed
+     */
     public function getCompletedTask($id, $user_id)
     {
         return $this->model
@@ -111,11 +144,19 @@ class TaskStatisticRepository extends EloquentRepository
             ->first();
     }
 
+    /**
+     * @param $task_id
+     * @return mixed
+     */
     public function getTaskByTaskId($task_id)
     {
         return $this->model->where('task_id', '=', $task_id)->get();
     }
 
+    /**
+     * @param $task_id
+     * @return mixed
+     */
     public function getTaskAcceptedUsers($task_id)
     {
         return $this->model->where('task_id', '=', $task_id)->where('accepted_by', '>=', '1')->get();

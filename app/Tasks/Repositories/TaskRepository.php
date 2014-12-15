@@ -24,7 +24,6 @@ class TaskRepository extends EloquentRepository
         $this->model->description = $task->description;
         $this->model->assigned_from = $task->assigned_from;
         $this->model->project_id = $task->project_id;
-        $this->model->priority = $task->priority;
 
         $this->model->save();
 
@@ -45,21 +44,13 @@ class TaskRepository extends EloquentRepository
         $taski->title = $task->title;
         $taski->slug = $task->slug;
         $taski->description = $task->description;
-        $taski->assigned_from = $task->assigned_from;
         $taski->project_id = $task->project_id;
-        $taski->priority = $task->priority;
 
         $taski->save();
 
-        $user_ids = [];
-
-        foreach($taski->assignedUsers as $user)
-        {
-            $user_ids[] = $user->id;
+        if($task->assigned_to != null) {
+            $taski->assignedUsers()->attach($task->assigned_to);
         }
-
-        $taski->assignedUsers()->detach($user_ids);
-        $taski->assignedUsers()->attach($task->assigned_to);
     }
 
     /**

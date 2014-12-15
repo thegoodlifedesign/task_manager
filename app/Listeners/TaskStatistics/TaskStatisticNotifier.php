@@ -1,13 +1,13 @@
 <?php namespace TGLD\Listeners\TaskStatistics;
 
-use Laracasts\Commander\Events\EventListener;
+use TGLD\Tasks\Events\TaskWasPersisted;
+use TGLD\Tasks\Events\TaskWasUpdated;
 use TGLD\Tasks\Repositories\TaskStatisticRepository;
 use TGLD\Tasks\Events\TaskWasAccepted;
 use TGLD\Tasks\Events\TaskWasCompleted;
-use TGLD\Tasks\Events\TaskWasPosted;
 use TGLD\Tasks\Events\TaskWasStarted;
 
-class TaskStatisticNotifier extends EventListener
+class TaskStatisticNotifier
 {
     protected $taskStatRepo;
 
@@ -17,12 +17,21 @@ class TaskStatisticNotifier extends EventListener
     }
 
     /**
-     * @Hears("TGLD.Tasks.Events.TaskWasPosted")
-     * @param TaskWasPosted $event
+     * @Hears("TGLD.Tasks.Events.TaskWasPersisted")
+     * @param TaskWasPersisted $event
      */
-    public function taskWasPosted(TaskWasPosted $event)
+    public function taskWasPosted(TaskWasPersisted $event)
     {
         $this->taskStatRepo->addTask($event->task);
+    }
+
+    /**
+     * @Hears("TGLD.Tasks.Events.TaskWasUpdated")
+     * @param TaskWasUpdated $event
+     */
+    public function taskWasUpdated(TaskWasUpdated $event)
+    {
+        $this->taskStatRepo->updateTask($event->task);
     }
 
     /**

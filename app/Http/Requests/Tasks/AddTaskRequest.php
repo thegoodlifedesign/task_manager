@@ -25,7 +25,9 @@ class AddTaskRequest extends Request
             'project' => 'required',
             'assigned_to' => 'required',
             'assigned_from' => 'required',
-            'priority' => 'required',
+			'website_link' => 'sometimes|url',
+			'related_link' => 'sometimes|url',
+			'due_date' => 'required|date',
 		];
 	}
 
