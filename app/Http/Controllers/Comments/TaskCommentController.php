@@ -1,6 +1,6 @@
 <?php namespace TGLD\Http\Controllers\Comments;
 
-use TGLD\Http\Requests\AddTaskCommentRequest;
+use TGLD\Http\Requests\Tasks\AddTaskCommentRequest;
 use TGLD\Comments\UseCases\PostTaskCommentCommand;
 use TGLD\Http\Controllers\CommandController;
 use TGLD\Utilities\Flash\Flash;

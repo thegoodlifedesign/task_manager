@@ -16,8 +16,8 @@ class CreateTaskDetailsTable extends Migration {
 		{
 			$table->increments('id');
 			$table->integer('task_id')->unsigned();
-			$table->string('website_link');
-			$table->string('related_link');
+			$table->string('website_link')->nullable();
+			$table->string('related_link')->nullable();
 			$table->date('due_date');
 			$table->integer('completion_time')->nullable();
 			$table->timestamps();

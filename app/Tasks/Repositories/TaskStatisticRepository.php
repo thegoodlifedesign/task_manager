@@ -42,7 +42,7 @@ class TaskStatisticRepository extends EloquentRepository
 
     public function updateTask($task)
     {
-        
+
     }
 
     /**
