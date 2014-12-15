@@ -1,7 +1,8 @@
 <?php namespace TGLD\Http\Controllers\Tasks;
 
-
-use Illuminate\Support\Facades\Route;
+use TGLD\Http\Requests\Tasks\DenyTaskRequest;
+use TGLD\Tasks\UseCases\DenyTaskCommand;
+use TGLD\Utilities\Flash\Flash;
 
 class AssignedTaskController extends AbstractTaskController
 {
@@ -18,5 +19,18 @@ class AssignedTaskController extends AbstractTaskController
         $tasks = $this->taskService->assignedTasks($username);
 
         return view('task.assigned-tasks', compact('tasks', 'username'));
+    }
+
+    /**
+     * @param DenyTaskRequest $request
+     * @return \Illuminate\Http\RedirectResponse
+     */
+    public function postDenyTask(DenyTaskRequest $request)
+    {
+        $this->execute(DenyTaskCommand::class);
+
+        Flash::message('Task has been denied!');
+
+        return redirect()->back();
     }
 }

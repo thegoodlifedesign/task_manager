@@ -98,6 +98,11 @@ class Task extends Model
         return $task;
     }
 
+    public static function deny($id)
+    {
+        return new static(compact('id'));
+    }
+
     /**
      * @param $id
      * @return static
@@ -180,7 +185,7 @@ class Task extends Model
      */
     public function assignedUsers()
     {
-        return $this->belongsToMany('TGLD\Members\Member', 'user_assigned_task', 'task_id', 'user_id');
+        return $this->belongsToMany('TGLD\Members\Member', 'user_assigned_task', 'task_id', 'user_id')->withPivot('denied');
     }
 
     /**

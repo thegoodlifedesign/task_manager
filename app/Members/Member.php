@@ -117,7 +117,9 @@ class Member extends Model implements AuthenticatableContract, CanResetPasswordC
 	public function assignedTasks()
 	{
 		return $this->belongsToMany('TGLD\Tasks\Task', 'user_assigned_task', 'user_id', 'task_id')
+			->withPivot('denied')
 			->with('project')
+			->where('denied', '=', 0)
 			->orderBy('priority', 'ASC')
 			->latest();
 	}

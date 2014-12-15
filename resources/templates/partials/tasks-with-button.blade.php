@@ -24,8 +24,8 @@
                                          <input type="hidden" name="task_id" value="{{$task->id}}">
                                          <button class="check-mark-btn" type="submit">{!! HTML::image('static/img/checkmark.png') !!}</button>
                                     {!! Form::close() !!}
-                                    @if( ! App::make('taskHelpers')->isTaskAccepted($task) and App::make('userHelpers')->isUserTaskOwner($task))
-                                        {!! Form::open(['url' => URL::route('delete.task')]) !!}
+                                    @if( ! App::make('taskHelpers')->isTaskAccepted($task))
+                                        {!! Form::open(['url' => URL::route('deny.task')]) !!}
                                              <input type="hidden" name="task_id" value="{{$task->id}}">
                                              <button class="decline-mark-btn" type="submit">{!! HTML::image('static/img/decline-mark.png') !!}</button>
                                         {!! Form::close() !!}

@@ -76,6 +76,10 @@ $router->get('{project}/{task}/update', ['as' => 'update.task', 'uses' => 'Tasks
  */
 $router->post('task/delete', ['as' => 'delete.task', 'uses' => 'Tasks\TaskController@destroy']);
 /*
+ * DENY
+ */
+$router->post('task/deny', ['as' => 'deny.task', 'uses' => 'Tasks\AssignedTaskController@postDenyTask']);
+/*
  * ASSIGNED TASKS
  */
 $router->get('{username}/assigned-tasks', ['as' => 'assigned.tasks', 'uses' => 'Tasks\AssignedTaskController@getAssignedTasks']);

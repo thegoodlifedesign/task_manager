@@ -32,6 +32,13 @@ class TaskRepository extends EloquentRepository
         return $this->model;
     }
 
+    public function denyTask($task)
+    {
+        $itask = $this->model->where('id', '=', $task->id)->first();
+
+        $itask->assignedUsers()->updateExistingPivot($this->auth->user()->id, ['denied' => 1]);
+    }
+
     /**
      * Update a task
      *
