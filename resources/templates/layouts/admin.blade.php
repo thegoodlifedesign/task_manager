@@ -12,7 +12,7 @@
                    <li class='has-sub'><a id="taskIcon" class="sidebar-icons" href='#'><span>Tasks<i id="sidebarBottomArrow" class="fa fa-chevron-down"></i></span></a>
                       <ul>
                          <li><a href="{!! URL::route('completed.tasks', $attributes = ['username' => Route::input('username') ?: Auth::user()->username]) !!}"><span>Completed Tasks</span></a></li>
-                         <li><a href="{!! URL::route('started.tasks', $attributes = ['username' => Route::input('username') ?: Auth::user()->username]) !!}"><span>Stared Tasks</span></a></li>
+                         <li><a href="{!! URL::route('started.tasks', $attributes = ['username' => Route::input('username') ?: Auth::user()->username]) !!}"><span>Started Tasks</span></a></li>
                          <li><a href="{!! URL::route('accepted.tasks', $attributes = ['username' => Route::input('username') ?: Auth::user()->username]) !!}"><span>Accepted Tasks</span></a></li>
                          <li class='last'><a href="{!! URL::route('assigned.tasks', $attributes = ['username' => Route::input('username') ?: Auth::user()->username]) !!}"><span>Assigned Tasks</span></a></li>
                       </ul>
