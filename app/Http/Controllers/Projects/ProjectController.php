@@ -1,5 +1,6 @@
 <?php namespace TGLD\Http\Controllers\Projects;
 
+
 use TGLD\Http\Controllers\CommandController;
 use TGLD\Http\Requests\Projects\ProjectRequest;
 use TGLD\Projects\Services\projectService;
@@ -72,15 +73,12 @@ class ProjectController extends CommandController
     /**
      * Show all task belonging to the project
      *
-     * @param $project_slug
      * @internal param int $id
      * @return \Illuminate\View\View
      */
-    public function show($project_slug)
+    public function show()
     {
-        $tasks = $this->taskService->projectTasks($project_slug);
 
-        return view('project.show', compact('tasks'));
     }
 
     /**

@@ -48,9 +48,7 @@ class TaskService
 
         if( ! $member) throw new UsernameNotFoundException;
 
-        $tasks = $member->assignedTasks;
-
-        return $tasks;
+        return $member->assignedTasks;
     }
 
     /**
@@ -65,9 +63,8 @@ class TaskService
 
         if( ! $member) throw new UsernameNotFoundException;
 
-        $tasks = $member->acceptedTasks;
+        return $member->acceptedTasks;
 
-        return $tasks;
     }
 
     /**
@@ -82,9 +79,7 @@ class TaskService
 
         if( ! $member) throw new UsernameNotFoundException;
 
-        $tasks = $member->startedTasks;
-
-        return $tasks;
+        return $member->startedTasks;
     }
 
     /**
@@ -99,9 +94,7 @@ class TaskService
 
         if( ! $member) throw new UsernameNotFoundException;
 
-        $tasks = $member->completedTasks;
-
-        return $tasks;
+        return $member->completedTasks;
     }
 
     /**
@@ -136,5 +129,14 @@ class TaskService
         if(!$project) throw new ProjectNotFoundException;
 
         return $this->task->getByProjectId($project->id);
+    }
+
+    public function personalProjectTasks($username, $project_slug)
+    {
+        $project = $this->project->getIdBySlug($project_slug);
+
+        if(!$project) throw new ProjectNotFoundException;
+
+        return $this->task->getByProjectIdAndUsername($project->id, $username);
     }
 }

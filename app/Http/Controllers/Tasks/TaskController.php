@@ -19,7 +19,7 @@ class TaskController extends AbstractTaskController
      */
     public function index()
     {
-        
+
     }
 
     /**
@@ -94,7 +94,7 @@ class TaskController extends AbstractTaskController
     {
         $task =  $this->execute(UpdateTaskCommand::class, null, [
             'TGLD\Decorators\TaskFormSanitizer',
-            'TGLD\Decorators\TitleSlugGenerator',
+            'TGLD\Decorators\TaskSlugGenerator',
         ]);
 
         Flash::message('Task was updated!');

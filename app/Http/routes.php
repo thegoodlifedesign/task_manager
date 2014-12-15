@@ -121,9 +121,9 @@ $router->post('project/add', ['as' => 'add.project', 'uses' => 'Projects\Project
  */
 $router->get('projects', ['as' => 'projects', 'uses' => 'Projects\ProjectController@index']);
 /*
- * SHOW TASK BELONGING TO THE PROJECT
+ * SHOW ALL TASK BELONGING TO THE PROJECT
  */
-$router->get('{project}/tasks', ['as' => 'project.tasks', 'uses' => 'Projects\ProjectController@show']);
+$router->get('{project}/tasks', ['as' => 'project.tasks', 'uses' => 'Projects\ProjectTasksController@getAllTasks']);
 
 
 
