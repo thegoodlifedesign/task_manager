@@ -3,12 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="5bc76c73-0ecc-4c4e-bc1a-3bf8bc34e4e6" name="Default" comment="">
       <change type="DELETED" beforePath="$PROJECT_DIR$/resources/templates/partials/task.blade.php" afterPath="" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/templates/layouts/admin.blade.php" afterPath="$PROJECT_DIR$/resources/templates/layouts/admin.blade.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/templates/layouts/main.blade.php" afterPath="$PROJECT_DIR$/resources/templates/layouts/main.blade.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/static/css/simple-sidebar.css" afterPath="$PROJECT_DIR$/public/static/css/simple-sidebar.css" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/static/css/styles.css" afterPath="$PROJECT_DIR$/public/static/css/styles.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/templates/partials/tasks-with-button.blade.php" afterPath="$PROJECT_DIR$/resources/templates/partials/tasks-with-button.blade.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="task_manager.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -46,8 +41,8 @@
       <file leaf-file-name="styles.css" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/public/static/css/styles.css">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.8333333" vertical-offset="6573" max-vertical-offset="7581">
-              <caret line="353" column="20" selection-start-line="353" selection-start-column="20" selection-end-line="353" selection-end-column="20" />
+            <state vertical-scroll-proportion="0.16666667" vertical-offset="3864" max-vertical-offset="7581">
+              <caret line="192" column="13" selection-start-line="192" selection-start-column="13" selection-end-line="192" selection-end-column="13" />
               <folding />
             </state>
           </provider>
@@ -828,8 +823,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/public/static/css/styles.css">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.8333333" vertical-offset="6573" max-vertical-offset="7581">
-          <caret line="353" column="20" selection-start-line="353" selection-start-column="20" selection-end-line="353" selection-end-column="20" />
+        <state vertical-scroll-proportion="0.16666667" vertical-offset="3864" max-vertical-offset="7581">
+          <caret line="192" column="13" selection-start-line="192" selection-start-column="13" selection-end-line="192" selection-end-column="13" />
           <folding />
         </state>
       </provider>
