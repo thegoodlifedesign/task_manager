@@ -26,9 +26,9 @@
               <span class="icon-bar"></span>
             </button>
             @if(Auth::check())
-                <a class="navbar-brand" href="{!! URL::route('assigned.tasks', $attributes = ['username' => Auth::user()->username]) !!}">Task Manager</a>
+                <a class="navbar-brand" href="{!! URL::route('assigned.tasks', $attributes = ['username' => Auth::user()->username]) !!}">{!! HTML::image('static/img/logo.png') !!}</a>
             @else
-                <a class="navbar-brand" href="/">Task Manager</a>
+                <a class="navbar-brand" href="/">{!! HTML::image('static/img/logo.png') !!}</a>
             @endif
           </div>
           <div class="navbar-collapse collapse">
@@ -36,19 +36,16 @@
             </ul>
             <ul class="nav navbar-nav navbar-right">
                 @if(Auth::check())
+                    <li class="dropdown"><a href="#" id="headerUsername" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false"><span>{{ucwords(Auth::user()->first_name)}} {{ucwords(Auth::user()->last_name)}}</span><span class="caret"></span></a>
+                      <ul class="dropdown-menu" role="menu">
+                        <li><a class="" href="{!! URL::route('auth.logout') !!}">Logout</a></li>
+                      </ul>
+                    </li>
                     <li class="dropdown"><a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Profiles <span class="caret"></span></a>
                       <ul class="dropdown-menu" role="menu">
                         <?php App::make('userHelpers')->getUserDropdown(); ?>
                       </ul>
                     </li>
-                    <li class="dropdown"><a href="{!! URL::route('projects') !!}" class="dropdown-toggle" data-toggle="dropdown"  aria-expanded="false">Projects <span class="caret"></span></a>
-                      <ul class="dropdown-menu" role="menu">
-                        <li><a class="" href="{!! URL::route('projects') !!}">View All</a></li>
-                        <li><a class="" href="{!! URL::route('add.project') !!}">Add Project</a></li>
-                      </ul>
-                    </li>
-                    <li><a href="{!! URL::route('add.task') !!}">Add Task</a></li>
-                    <li><a class="" href="{!! URL::route('auth.logout') !!}">Logout</a></li>
                 @else
                     <li><a class="" href="{!! URL::route('auth.login') !!}">Login</a></li>
                     <li><a  href="{!! URL::route('auth.register') !!}">Register</a></li>

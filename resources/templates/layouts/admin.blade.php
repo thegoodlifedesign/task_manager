@@ -19,26 +19,23 @@
                    </li>
                    <li class='has-sub'><a id="projectIcon" class="sidebar-icons" href='#'><span>Projects<i id="sidebarBottomArrow" class="fa fa-chevron-down"></i></span></a>
                       <ul>
-                         <li><a href='#'><span>Company</span></a></li>
-                         <li class='last'><a href='#'><span>Contact</span></a></li>
+                         <li class="last"><a href="{!! URL::route('projects') !!}"><span>All Projects</span></a></li>
                       </ul>
                    </li>
                    <li class='has-sub'><a id="addressBookIcon" class="sidebar-icons" href='#'><span>Address Book<i id="sidebarBottomArrow" class="fa fa-chevron-down"></i></span></a>
                       <ul>
-                         <li><a href='#'><span>Company</span></a></li>
-                         <li class='last'><a href='#'><span>Contact</span></a></li>
+
                       </ul>
                    </li>
                    <li class='has-sub'><a id="printIcon" class="sidebar-icons" href='#'><span>Print<i id="sidebarBottomArrow" class="fa fa-chevron-down"></i></span></a>
                       <ul>
-                         <li><a href='#'><span>Company</span></a></li>
-                         <li class='last'><a href='#'><span>Contact</span></a></li>
+
                       </ul>
                    </li>
                    <li class='has-sub'><a id="addIcon" class="sidebar-icons" href='#'><span>Add<i id="sidebarBottomArrow" class="fa fa-chevron-down"></i></span></a>
                       <ul>
-                         <li><a href='#'><span>Company</span></a></li>
-                         <li class='last'><a href='#'><span>Contact</span></a></li>
+                         <li><a href="{!! URL::route('add.project') !!}"><span>Add Project</span></a></li>
+                         <li class='last'><a href="{!! URL::route('add.task') !!}"><span>Add Task</span></a></li>
                       </ul>
                    </li>
                 </ul>

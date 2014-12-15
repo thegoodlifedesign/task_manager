@@ -5,7 +5,7 @@
 }
 body {
     min-height: 2000px;
-    padding-top: 50px;
+    padding-top: 75px;
     background: #f7f7f7;
 }
 
@@ -76,6 +76,7 @@ a:hover{
 }
 .navbar{
     background: #fd6a6a !important;
+    height: 75px;
 }
 .navbar-default{
     border: none;
@@ -352,4 +353,13 @@ a:hover{
 #sidebarBottomArrow{
     float: right;
     margin-right: 15%;
+}
+.navbar-right{
+    padding-top:10px;
+}
+#headerUsername{
+    font-size: 20px;
+    background: url("../img/profile-pic.png") no-repeat;
+    padding-left: 70px;
+    height: 55px;
 }
