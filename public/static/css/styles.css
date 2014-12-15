@@ -363,3 +363,6 @@ a:hover{
     padding-left: 70px;
     height: 55px;
 }
+.navbar-brand{
+   padding-top: 17px;
+}
