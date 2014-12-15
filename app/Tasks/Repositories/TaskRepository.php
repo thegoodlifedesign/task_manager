@@ -159,11 +159,6 @@ class TaskRepository extends EloquentRepository
         return $this->model->with('project')->where('project_id', '=', $project_id)->get();
     }
 
-    public function getByProjectIdAndUsername($username)
-    {
-
-    }
-
 
     public function getAllIdBySlug($slug)
     {

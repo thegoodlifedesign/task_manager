@@ -6,7 +6,7 @@ class ProjectTasksController extends AbstractProjectController
      * @param $project_slug
      * @return \Illuminate\View\View
      */
-    public function getAllTask($project_slug)
+    public function getAllTasks($project_slug)
     {
         $tasks = $this->taskService->projectTasks($project_slug);
         return view('project.show', compact('tasks'));
