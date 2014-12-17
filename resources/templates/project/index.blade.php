@@ -9,7 +9,7 @@
                 <a href="{!! URL::route('project.tasks', $attributes = ['project' => $project->slug]) !!}">
                     <div class="col-md-4">
                         <div class="panel panel-default">
-                          <div class="panel-heading">
+                          <div class="panel-heading panel-heading-0">
                             <h3 class="panel-title">{{$project->title}}.</h3>
                           </div>
                           <div class="panel-body">
