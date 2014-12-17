@@ -2,8 +2,38 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="5bc76c73-0ecc-4c4e-bc1a-3bf8bc34e4e6" name="Default" comment="">
+      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/config/app.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/config/auth.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/config/cache.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/config/compile.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/config/database.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/config/filesystems.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/config/mail.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/config/queue.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/config/services.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/config/session.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/config/view.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/config/workbench.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/database/.gitignore" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/database/migrations/.gitkeep" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/database/migrations/2014_09_27_034234_create_users_table.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/database/migrations/2014_09_27_171829_create_roles_table.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/database/migrations/2014_09_27_213448_create_projects_table.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/database/migrations/2014_09_27_213608_create_tasks_table.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/database/migrations/2014_10_04_175034_create_user_assigned_task_table.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/database/migrations/2014_10_05_001651_create_user_accepted_task_table.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/database/migrations/2014_10_05_013338_create_user_started_task_table.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/database/migrations/2014_10_05_223959_create_task_statistics_table.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/database/migrations/2014_10_06_030833_create_user_completed_task_table.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/database/migrations/2014_10_12_100000_create_password_resets_table.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/database/migrations/2014_10_15_184820_create_session_table.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/database/migrations/2014_10_15_202551_create_comments_table.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/database/migrations/2014_12_15_174549_create_task_details_table.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/database/seeds/.gitkeep" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/database/seeds/DatabaseSeeder.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/database/seeds/ProjectTableSeeder.php" afterPath="" />
       <change type="DELETED" beforePath="$PROJECT_DIR$/resources/templates/partials/task.blade.php" afterPath="" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/composer.lock" afterPath="$PROJECT_DIR$/composer.lock" />
     </list>
     <ignored path="task_manager.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -33,16 +63,6 @@
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="3150">
               <caret line="1" column="0" selection-start-line="1" selection-start-column="0" selection-end-line="1" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="database.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/resources/config/database.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="819" max-vertical-offset="2688">
-              <caret line="63" column="10" selection-start-line="63" selection-start-column="10" selection-end-line="63" selection-end-column="10" />
               <folding />
             </state>
           </provider>
@@ -129,7 +149,7 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="app" />
+              <option name="myItemId" value="resources" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -271,24 +291,10 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/resources/database/migrations/2014_09_27_034234_create_users_table.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1029">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/Tasks/UseCases/PostNewTaskCommand.php">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="903">
           <caret line="23" column="152" selection-start-line="23" selection-start-column="152" selection-end-line="23" selection-end-column="158" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/resources/database/migrations/2014_10_04_175034_create_user_assigned_task_table.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="882">
-          <caret line="26" column="7" selection-start-line="26" selection-start-column="7" selection-end-line="26" selection-end-column="7" />
         </state>
       </provider>
     </entry>
@@ -376,13 +382,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/resources/database/migrations/2014_12_15_174549_create_task_details_table.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.375" vertical-offset="0" max-vertical-offset="1008">
-          <caret line="19" column="54" selection-start-line="19" selection-start-column="54" selection-end-line="19" selection-end-column="54" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/Tasks/Repositories/TaskStatisticRepository.php">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.67035174" vertical-offset="215" max-vertical-offset="3507">
@@ -394,13 +393,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.47916666" vertical-offset="21" max-vertical-offset="1428">
           <caret line="24" column="33" selection-start-line="24" selection-start-column="33" selection-end-line="24" selection-end-column="33" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/resources/database/migrations/2014_09_27_213608_create_tasks_table.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.75" vertical-offset="42" max-vertical-offset="1050">
-          <caret line="39" column="26" selection-start-line="39" selection-start-column="26" selection-end-line="39" selection-end-column="26" />
         </state>
       </provider>
     </entry>
@@ -535,7 +527,7 @@
         <state vertical-scroll-proportion="0.39583334" vertical-offset="0" max-vertical-offset="1008">
           <caret line="19" column="28" selection-start-line="19" selection-start-column="28" selection-end-line="19" selection-end-column="28" />
           <folding>
-            <element signature="e#47#99#0#PHP" expanded="true" />
+            <element signature="e#47#99#0#PHP" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -561,7 +553,7 @@
         <state vertical-scroll-proportion="0.875" vertical-offset="21" max-vertical-offset="1029">
           <caret line="43" column="1" selection-start-line="43" selection-start-column="1" selection-end-line="43" selection-end-column="1" />
           <folding>
-            <element signature="e#46#84#0#PHP" expanded="true" />
+            <element signature="e#46#84#0#PHP" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -636,14 +628,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="3150">
           <caret line="1" column="0" selection-start-line="1" selection-start-column="0" selection-end-line="1" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/resources/config/database.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="819" max-vertical-offset="2688">
-          <caret line="63" column="10" selection-start-line="63" selection-start-column="10" selection-end-line="63" selection-end-column="10" />
           <folding />
         </state>
       </provider>
