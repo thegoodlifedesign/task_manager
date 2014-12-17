@@ -1,6 +1,6 @@
 <?php
 
-dd(getenv('DB_USERNAME'));
+dd(getenv('DB_NAME'));
 $router->get('/', ['as' => 'home', 'uses' => 'HomeController@showHome']);
 
 /*
