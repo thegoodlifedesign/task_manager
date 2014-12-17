@@ -43,4 +43,18 @@ class TaskDetailRepository extends EloquentRepository
 
         $itask->save();
     }
+
+    public function addCompletionTime($task)
+    {
+        $itask = $this->model->where('task_id', '=', $task->id)->first();
+
+        $itask->completion_time = $task->completion_time;
+
+        $itask->save();
+    }
+
+    public function getTaskByTaskId($task_id)
+    {
+        return $this->model->where('task_id', '=', $task_id)->first();
+    }
 }

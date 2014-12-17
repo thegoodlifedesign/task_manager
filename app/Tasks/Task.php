@@ -18,7 +18,7 @@ class Task extends Model
      *
      * @var array
      */
-    protected $fillable = ['id', 'title', 'slug', 'file_url', 'description', 'assigned_from', 'priority', 'assigned_to', 'project_id', 'due_date', 'related_link', 'website_link'];
+    protected $fillable = ['completion_time', 'id', 'title', 'slug', 'file_url', 'description', 'assigned_from', 'priority', 'assigned_to', 'project_id', 'due_date', 'related_link', 'website_link'];
 
 
     /*
@@ -107,9 +107,9 @@ class Task extends Model
      * @param $id
      * @return static
      */
-    public static function acceptTask($id)
+    public static function acceptTask($id, $completion_time)
     {
-        $task = new static(compact('id'));
+        $task = new static(compact('id', 'completion_time'));
 
         $task->raise(new TaskWasAccepted($task));
 

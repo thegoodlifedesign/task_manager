@@ -25,7 +25,7 @@ class AcceptedTaskCommandHandler implements CommandHandler
      */
     public function handle($command)
     {
-        $task = Task::acceptTask($command->task_id);
+        $task = Task::acceptTask($command->task_id, $command->completion_time);
 
         $this->task->acceptTask($task);
 

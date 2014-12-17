@@ -1,6 +1,7 @@
 <?php namespace TGLD\Listeners\TaskDetails;
 
 
+use TGLD\Tasks\Events\TaskWasAccepted;
 use TGLD\Tasks\Events\TaskWasPosted;
 use TGLD\Tasks\Events\TaskWasUpdated;
 use TGLD\Tasks\Repositories\TaskDetailRepository;
@@ -30,5 +31,14 @@ class TaskDetailNotifier
     public function taskWasUpdated(TaskWasUpdated $event)
     {
         $this->taskDetailsRepo->updateDetail($event->task);
+    }
+
+    /**
+     * @Hears("TGLD.Tasks.Events.TaskWasAccepted")
+     * @param TaskWasAccepted $event
+     */
+    public function completion_time(TaskWasAccepted $event)
+    {
+        $this->taskDetailsRepo->addCompletionTime($event->task);
     }
 }

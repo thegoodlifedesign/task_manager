@@ -172,4 +172,13 @@ class TaskRepository extends EloquentRepository
         return $itask;
     }
 
+    public function setPriority($priority, $id)
+    {
+        $task = $this->model->where('id', '=', $id)->first();
+
+        $task->priority = $priority;
+
+        $task->save();
+    }
+
 }

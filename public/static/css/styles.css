@@ -176,13 +176,16 @@ a:hover{
 /***************************************/
 /* TASK PANEL */
 /***************************************/
-.panel-heading-1, .panel-heading-2{
+.panel-heading-0{
+    background: #c6c1c6 !important;
+}
+.panel-heading-1{
     background: #cbfdc9 !important;
 }
-.panel-heading-3{
+.panel-heading-2{
     background: #f9e5d0 !important;
 }
-.panel-heading-4, .panel-heading-5{
+.panel-heading-3{
     background: #faafaf !important;
 }
 .panel-heading h1{

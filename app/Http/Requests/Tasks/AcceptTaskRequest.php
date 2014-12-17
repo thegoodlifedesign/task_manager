@@ -21,6 +21,7 @@ class AcceptTaskRequest extends Request
     {
         return [
             'task_id' => 'required',
+            'completion_time' => 'required'
         ];
     }
 

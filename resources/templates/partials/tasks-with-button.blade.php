@@ -5,10 +5,10 @@
             <?php $task_id = [];?>
                 @foreach($row as $task)
                     <div class="col-md-4">
-                        <a href="{!! URL::route('task.detail', $attributes = ['project' => $task->project->slug, 'task' => $task->slug]) !!}">
                             <div class="panel panel-default">
                               <div class="panel-heading panel-heading-<?php echo $task->priority; ?>">
-                                <h1 class="panel-title">{{ucwords($task->title)}}.</h1>
+                                <a href="{!! URL::route('task.detail', $attributes = ['project' => $task->project->slug, 'task' => $task->slug]) !!}"><h1 class="panel-title">{{ucwords($task->title)}}.</h1>
+                        </a>
                               </div>
                               <div class="panel-body">
                                 <div class="body-panel">
@@ -20,11 +20,16 @@
                                     </div>
                                 </div>
                                 <div class="task-options">
+                                    @if(App::make('taskHelpers')->isTaskAccepted($task))
                                     {!! Form::open(['url' => URL::route(''.$stage.'.task')]) !!}
                                          <input type="hidden" name="task_id" value="{{$task->id}}">
                                          <button class="check-mark-btn" type="submit">{!! HTML::image('static/img/checkmark.png') !!}</button>
                                     {!! Form::close() !!}
-                                    @if( ! App::make('taskHelpers')->isTaskAccepted($task))
+                                    @else
+                                        @include('partials.accept-task-modal')
+                                        <button type="button" class="check-mark-btn" data-toggle="modal" data-target="#myModal">
+                                          {!! HTML::image('static/img/checkmark.png') !!}
+                                        </button>
                                         {!! Form::open(['url' => URL::route('deny.task')]) !!}
                                              <input type="hidden" name="task_id" value="{{$task->id}}">
                                              <button class="decline-mark-btn" type="submit">{!! HTML::image('static/img/decline-mark.png') !!}</button>
@@ -33,7 +38,6 @@
                                 </div>
                               </div>
                             </div>
-                        </a>
                     </div>
                 @endforeach
             </div>

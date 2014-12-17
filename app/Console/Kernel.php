@@ -12,6 +12,7 @@ class Kernel extends ConsoleKernel {
 	 */
 	protected $commands = [
 		'TGLD\Console\Commands\InspireCommand',
+		'TGLD\Console\Commands\SetTaskPriorityCommand',
 	];
 
 	/**
