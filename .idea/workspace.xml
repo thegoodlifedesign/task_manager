@@ -3,7 +3,6 @@
   <component name="ChangeListManager">
     <list default="true" id="5bc76c73-0ecc-4c4e-bc1a-3bf8bc34e4e6" name="Default" comment="">
       <change type="DELETED" beforePath="$PROJECT_DIR$/resources/templates/partials/task.blade.php" afterPath="" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Tasks/Services/TaskService.php" afterPath="$PROJECT_DIR$/app/Tasks/Services/TaskService.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/templates/project/personal-project-tasks.blade.php" afterPath="$PROJECT_DIR$/resources/templates/project/personal-project-tasks.blade.php" />
     </list>
     <ignored path="task_manager.iws" />
@@ -29,11 +28,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="personal-project-tasks.blade.php" pinned="false" current-in-tab="false">
+      <file leaf-file-name="personal-project-tasks.blade.php" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/resources/templates/project/personal-project-tasks.blade.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="357">
-              <caret line="5" column="25" selection-start-line="5" selection-start-column="25" selection-end-line="5" selection-end-column="25" />
+            <state vertical-scroll-proportion="0.104166664" vertical-offset="0" max-vertical-offset="1008">
+              <caret line="5" column="27" selection-start-line="5" selection-start-column="27" selection-end-line="5" selection-end-column="27" />
               <folding />
             </state>
           </provider>
@@ -69,10 +68,10 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="TaskService.php" pinned="false" current-in-tab="true">
+      <file leaf-file-name="TaskService.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/Tasks/Services/TaskService.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.29166666" vertical-offset="3129" max-vertical-offset="4578">
+            <state vertical-scroll-proportion="0.0" vertical-offset="3129" max-vertical-offset="4578">
               <caret line="169" column="11" selection-start-line="169" selection-start-column="11" selection-end-line="169" selection-end-column="36" />
               <folding />
             </state>
@@ -786,18 +785,18 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/resources/templates/project/personal-project-tasks.blade.php">
+    <entry file="file://$PROJECT_DIR$/app/Tasks/Services/TaskService.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="357">
-          <caret line="5" column="25" selection-start-line="5" selection-start-column="25" selection-end-line="5" selection-end-column="25" />
+        <state vertical-scroll-proportion="0.0" vertical-offset="3129" max-vertical-offset="4578">
+          <caret line="169" column="11" selection-start-line="169" selection-start-column="11" selection-end-line="169" selection-end-column="36" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/Tasks/Services/TaskService.php">
+    <entry file="file://$PROJECT_DIR$/resources/templates/project/personal-project-tasks.blade.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.29166666" vertical-offset="3129" max-vertical-offset="4578">
-          <caret line="169" column="11" selection-start-line="169" selection-start-column="11" selection-end-line="169" selection-end-column="36" />
+        <state vertical-scroll-proportion="0.104166664" vertical-offset="0" max-vertical-offset="1008">
+          <caret line="5" column="27" selection-start-line="5" selection-start-column="27" selection-end-line="5" selection-end-column="27" />
           <folding />
         </state>
       </provider>
