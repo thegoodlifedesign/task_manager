@@ -1,5 +1,4 @@
 <?php
-dd(phpinfo());
 $router->get('/', ['as' => 'home', 'uses' => 'HomeController@showHome']);
 
 /*
