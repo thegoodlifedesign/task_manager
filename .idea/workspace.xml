@@ -3,17 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="5bc76c73-0ecc-4c4e-bc1a-3bf8bc34e4e6" name="Default" comment="">
       <change type="DELETED" beforePath="$PROJECT_DIR$/resources/templates/partials/task.blade.php" afterPath="" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/resources/templates/project/index.blade.php" afterPath="$PROJECT_DIR$/resources/templates/project/all-projects.blade.php" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/resources/templates/project/show.blade.php" afterPath="$PROJECT_DIR$/resources/templates/project/personal-project-tasks.blade.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/database/migrations/2014_09_27_213608_create_tasks_table.php" afterPath="$PROJECT_DIR$/database/migrations/2014_09_27_213608_create_tasks_table.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/database/migrations/2014_10_05_223959_create_task_statistics_table.php" afterPath="$PROJECT_DIR$/database/migrations/2014_10_05_223959_create_task_statistics_table.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/database/migrations/2014_12_15_174549_create_task_details_table.php" afterPath="$PROJECT_DIR$/database/migrations/2014_12_15_174549_create_task_details_table.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Http/Controllers/Projects/ProjectController.php" afterPath="$PROJECT_DIR$/app/Http/Controllers/Projects/ProjectController.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Http/Controllers/Projects/ProjectTasksController.php" afterPath="$PROJECT_DIR$/app/Http/Controllers/Projects/ProjectTasksController.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Tasks/Services/TaskService.php" afterPath="$PROJECT_DIR$/app/Tasks/Services/TaskService.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Projects/Services/projectService.php" afterPath="$PROJECT_DIR$/app/Projects/Services/projectService.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Http/routes.php" afterPath="$PROJECT_DIR$/app/Http/routes.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/config/cache.php" afterPath="$PROJECT_DIR$/config/cache.php" />
     </list>
     <ignored path="task_manager.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -96,20 +86,6 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="task_manager" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="task_manager" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="task_manager" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="app" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -251,13 +227,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/app/Http/Requests/Tasks/AddTaskCommentRequest.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1008">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/Members/Member.php">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="1701" max-vertical-offset="3549">
@@ -614,6 +583,14 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.29166666" vertical-offset="63" max-vertical-offset="1071">
           <caret line="18" column="39" selection-start-line="18" selection-start-column="39" selection-end-line="18" selection-end-column="39" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/config/cache.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.5833333" vertical-offset="0" max-vertical-offset="1407">
+          <caret line="28" column="31" selection-start-line="28" selection-start-column="31" selection-end-line="28" selection-end-column="31" />
           <folding />
         </state>
       </provider>
