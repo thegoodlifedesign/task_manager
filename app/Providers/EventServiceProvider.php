@@ -24,6 +24,7 @@ class EventServiceProvider extends ServiceProvider {
 		'TGLD\Listeners\Emails\EmailNotifier',
 		'TGLD\Listeners\TaskStatistics\TaskStatisticNotifier',
 		'TGLD\Listeners\TaskDetails\TaskDetailNotifier',
+		'TGLD\Listeners\TaskPriority\TaskPriorityNotifier',
 	];
 
 }

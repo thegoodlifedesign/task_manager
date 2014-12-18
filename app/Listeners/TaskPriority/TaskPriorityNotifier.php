@@ -17,8 +17,9 @@ class TaskPriorityNotifier
      * @Hears("TGLD.Tasks.Events.TaskWasAccepted")
      * @param TaskWasAccepted $event
      */
-    public function setTaskPriority(TaskWasAccepted $event)
+    public function taskWasAccepted(TaskWasAccepted $event)
     {
+        dd('hey');
         $this->taskPriority->setPriority($event->task);
     }
 }

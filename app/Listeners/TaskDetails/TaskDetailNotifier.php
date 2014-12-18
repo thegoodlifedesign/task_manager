@@ -37,7 +37,7 @@ class TaskDetailNotifier
      * @Hears("TGLD.Tasks.Events.TaskWasAccepted")
      * @param TaskWasAccepted $event
      */
-    public function completion_time(TaskWasAccepted $event)
+    public function taskWasAccepted(TaskWasAccepted $event)
     {
         $this->taskDetailsRepo->addCompletionTime($event->task);
     }
