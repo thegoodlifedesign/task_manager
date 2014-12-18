@@ -6,7 +6,7 @@
     @if( ! is_null($tasks))
         @include('partials.tasks-no-button')
     @else
-       <a class="btn btn-primary" href="{!! URL::route('add.task') !!}">Add First Task</a>
+       <a class="btn btn-primary" href="{!! URL::route('add.task') !!}">Add Your First Task</a>
     @endif
 </div>
 @stop
