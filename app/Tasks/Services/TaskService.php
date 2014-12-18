@@ -139,32 +139,44 @@ class TaskService
 
     public function getPersonalProjectTasks($username, $project_slug)
     {
-        list($project_task_ids, $task) = $this->getProjectTasks($project_slug);
+        $project_task_ids = $this->getProjectTasks($project_slug);
 
-        $user_task_ids = $this->getUserTasks($username);
+        if( ! is_null($project_task_ids))
+        {
+            $user_task_ids = $this->getUserTasks($username);
 
-        $task_ids = $this->filterProjectAndUserTasks($user_task_ids, $project_task_ids);
+            $task_ids = $this->filterProjectAndUserTasks($user_task_ids, $project_task_ids);
 
-        $tasks = $this->task->getFromTaskIds($task_ids);
-        return $tasks;
+            $tasks = $this->task->getFromTaskIds($task_ids);
+            return $tasks;
+        }
+
+        return null;
     }
 
     /**
      * @param $project_slug
      * @return array
+     * @throws ProjectNotFoundException
      */
     public function getProjectTasks($project_slug)
     {
         $project = $this->project->getIdBySlug($project_slug);
 
+        if (!$project) throw new ProjectNotFoundException;
+
         $project_tasks = $this->task->getByProjectId($project->id);
 
-        $project_task_ids = [];
+        if(count($project_tasks) > 0)
+        {
+            $project_task_ids = [];
 
-        foreach ($project_tasks as $task) {
-            $project_task_ids[] = $task->id;
+            foreach ($project_tasks as $task) {
+                $project_task_ids[] = $task->id;
+            }
+            return $project_task_ids;
         }
-        return array($project_task_ids, $task);
+        return null;
     }
 
     /**
