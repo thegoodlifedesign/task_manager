@@ -15,7 +15,8 @@ class CreateTaskDetailsTable extends Migration {
 		Schema::create('task_details', function(Blueprint $table)
 		{
 			$table->increments('id');
-			$table->integer('task_id')->unsigned();
+			$table->integer('task_id')->unsigned()->index();
+			$table->foreign('task_id')->references('id')->on('tasks')->onDelete('cascade');
 			$table->string('website_link')->nullable();
 			$table->string('related_link')->nullable();
 			$table->date('due_date');

@@ -127,6 +127,10 @@ $router->get('projects', ['as' => 'projects', 'uses' => 'Projects\ProjectControl
  * SHOW ALL TASK BELONGING TO THE PROJECT
  */
 $router->get('{project}/tasks', ['as' => 'project.tasks', 'uses' => 'Projects\ProjectTasksController@getAllTasks']);
+/*
+ * SHOW ALL TASK BELONGING TO THE PROJECT SPECIFIC TO THE USER
+ */
+$router->get('{username}/{project}/tasks', ['as' => 'project.personal.tasks', 'uses' => 'Projects\ProjectTasksController@getPersonalTasks']);
 
 
 

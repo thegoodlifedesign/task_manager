@@ -15,7 +15,8 @@ class CreateTaskStatisticsTable extends Migration {
 		Schema::create('task_statistics', function(Blueprint $table)
 		{
 			$table->increments('id');
-			$table->integer('task_id');
+			$table->integer('task_id')->unsigned()->index();
+			$table->foreign('task_id')->references('id')->on('tasks')->onDelete('cascade');
 			$table->integer('assigned_to');
 			$table->integer('accepted_by')->nullable();
 			$table->integer('started_by')->nullable();

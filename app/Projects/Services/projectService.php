@@ -1,14 +1,15 @@
 <?php namespace TGLD\Projects\Services;
 
+use TGLD\Members\Repositories\MemberRepository;
 use TGLD\Projects\Repositories\ProjectRepository;
 
 class projectService
 {
-    protected $project;
+    protected $projectRepo;
 
-    function __construct(ProjectRepository $project)
+    function __construct(ProjectRepository $projectRepo)
     {
-        $this->project = $project;
+        $this->projectRepo = $projectRepo;
     }
 
     /**
@@ -18,7 +19,7 @@ class projectService
      */
     public function all()
     {
-        $projects = $this->project->getLatest();
+        $projects = $this->projectRepo->getLatest();
 
         return $projects;
     }

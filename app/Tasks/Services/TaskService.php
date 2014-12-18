@@ -131,12 +131,4 @@ class TaskService
         return $this->task->getByProjectId($project->id);
     }
 
-    public function personalProjectTasks($username, $project_slug)
-    {
-        $project = $this->project->getIdBySlug($project_slug);
-
-        if(!$project) throw new ProjectNotFoundException;
-
-        return $this->task->getByProjectIdAndUsername($project->id, $username);
-    }
 }

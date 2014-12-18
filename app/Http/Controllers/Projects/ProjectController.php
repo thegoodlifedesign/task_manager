@@ -40,7 +40,7 @@ class ProjectController extends CommandController
     {
         $projects = $this->projectService->all();
 
-        return view('project.index', compact('projects'));
+        return view('project.all-projects', compact('projects'));
     }
 
     /**
@@ -71,12 +71,13 @@ class ProjectController extends CommandController
     }
 
     /**
-     * Show all task belonging to the project
+     * Show all projects belonging to a user
      *
      * @internal param int $id
+     * @param $username
      * @return \Illuminate\View\View
      */
-    public function show()
+    public function show($username)
     {
 
     }
