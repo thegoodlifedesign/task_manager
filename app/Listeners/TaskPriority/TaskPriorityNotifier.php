@@ -19,7 +19,6 @@ class TaskPriorityNotifier
      */
     public function taskWasAccepted(TaskWasAccepted $event)
     {
-        dd('hey');
         $this->taskPriority->setPriority($event->task);
     }
 }

@@ -3,8 +3,6 @@
   <component name="ChangeListManager">
     <list default="true" id="5bc76c73-0ecc-4c4e-bc1a-3bf8bc34e4e6" name="Default" comment="">
       <change type="DELETED" beforePath="$PROJECT_DIR$/resources/templates/partials/task.blade.php" afterPath="" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Providers/EventServiceProvider.php" afterPath="$PROJECT_DIR$/app/Providers/EventServiceProvider.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Listeners/TaskDetails/TaskDetailNotifier.php" afterPath="$PROJECT_DIR$/app/Listeners/TaskDetails/TaskDetailNotifier.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Listeners/TaskPriority/TaskPriorityNotifier.php" afterPath="$PROJECT_DIR$/app/Listeners/TaskPriority/TaskPriorityNotifier.php" />
     </list>
     <ignored path="task_manager.iws" />
@@ -80,10 +78,10 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="events.scanned.php" pinned="false" current-in-tab="true">
+      <file leaf-file-name="events.scanned.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/storage/framework/events.scanned.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.6666667" vertical-offset="0" max-vertical-offset="1008">
+            <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="798">
               <caret line="32" column="0" selection-start-line="32" selection-start-column="0" selection-end-line="32" selection-end-column="0" />
               <folding />
             </state>
@@ -100,11 +98,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="TaskDetailNotifier.php" pinned="false" current-in-tab="false">
+      <file leaf-file-name="TaskDetailNotifier.php" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/Listeners/TaskDetails/TaskDetailNotifier.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="966">
-              <caret line="35" column="4" selection-start-line="35" selection-start-column="4" selection-end-line="38" selection-end-column="7" />
+            <state vertical-scroll-proportion="0.75" vertical-offset="0" max-vertical-offset="1008">
+              <caret line="39" column="19" selection-start-line="39" selection-start-column="19" selection-end-line="39" selection-end-column="19" />
               <folding />
             </state>
           </provider>
@@ -123,8 +121,8 @@
       <file leaf-file-name="TaskPriorityNotifier.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/Listeners/TaskPriority/TaskPriorityNotifier.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="609">
-              <caret line="18" column="7" selection-start-line="18" selection-start-column="7" selection-end-line="18" selection-end-column="7" />
+            <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="588">
+              <caret line="20" column="5" selection-start-line="20" selection-start-column="5" selection-end-line="20" selection-end-column="5" />
               <folding />
             </state>
           </provider>
@@ -753,30 +751,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/Tasks/Repositories/TaskDetailRepository.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="336" max-vertical-offset="1344">
-          <caret line="46" column="20" selection-start-line="46" selection-start-column="20" selection-end-line="46" selection-end-column="20" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/Listeners/TaskDetails/TaskDetailNotifier.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="966">
-          <caret line="35" column="4" selection-start-line="35" selection-start-column="4" selection-end-line="38" selection-end-column="7" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/Listeners/TaskPriority/TaskPriorityNotifier.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="609">
-          <caret line="18" column="7" selection-start-line="18" selection-start-column="7" selection-end-line="18" selection-end-column="7" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/Providers/EventServiceProvider.php">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="756">
@@ -787,8 +761,32 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/storage/framework/events.scanned.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.6666667" vertical-offset="0" max-vertical-offset="1008">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="798">
           <caret line="32" column="0" selection-start-line="32" selection-start-column="0" selection-end-line="32" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Listeners/TaskPriority/TaskPriorityNotifier.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="588">
+          <caret line="20" column="5" selection-start-line="20" selection-start-column="5" selection-end-line="20" selection-end-column="5" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Tasks/Repositories/TaskDetailRepository.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="336" max-vertical-offset="1344">
+          <caret line="46" column="20" selection-start-line="46" selection-start-column="20" selection-end-line="46" selection-end-column="20" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Listeners/TaskDetails/TaskDetailNotifier.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.75" vertical-offset="0" max-vertical-offset="1008">
+          <caret line="39" column="19" selection-start-line="39" selection-start-column="19" selection-end-line="39" selection-end-column="19" />
           <folding />
         </state>
       </provider>
