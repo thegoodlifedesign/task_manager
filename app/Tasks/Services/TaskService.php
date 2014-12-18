@@ -6,6 +6,7 @@ use TGLD\Projects\Exceptions\ProjectNotFoundException;
 use TGLD\Projects\Repositories\ProjectRepository;
 use TGLD\Task\Exceptions\TaskNotFoundException;
 use TGLD\Tasks\Repositories\TaskRepository;
+use TGLD\Tasks\Repositories\TaskStatisticRepository;
 
 class TaskService
 {
@@ -23,17 +24,22 @@ class TaskService
      * @var TaskRepository
      */
     protected  $task;
+    /**
+     * @var TaskStatisticRepository
+     */
+    private $taskStatRepo;
 
     /**
      * @param TaskRepository $task
      * @param MemberRepository $member
      * @param ProjectRepository $project
      */
-    function __construct(TaskRepository $task, MemberRepository $member, ProjectRepository $project)
+    function __construct(TaskRepository $task, MemberRepository $member, ProjectRepository $project, TaskStatisticRepository $taskStatRepo)
     {
         $this->member = $member;
         $this->task= $task;
         $this->project = $project;
+        $this->taskStatRepo = $taskStatRepo;
     }
 
     /**
@@ -129,6 +135,73 @@ class TaskService
         if(!$project) throw new ProjectNotFoundException;
 
         return $this->task->getByProjectId($project->id);
+    }
+
+    public function getPersonalProjectTasks($username, $project_slug)
+    {
+        list($project_task_ids, $task) = $this->getProjectTasks($project_slug);
+
+        $user_task_ids = $this->getUserTasks($username);
+
+        $task_ids = $this->filterProjectAndUserTasks($user_task_ids, $project_task_ids);
+
+        $tasks = $this->task->getFromTaskIds($task_ids);
+        return $tasks;
+    }
+
+    /**
+     * @param $project_slug
+     * @return array
+     */
+    public function getProjectTasks($project_slug)
+    {
+        $project = $this->project->getIdBySlug($project_slug);
+
+        $project_tasks = $this->task->getByProjectId($project->id);
+
+        $project_task_ids = [];
+
+        foreach ($project_tasks as $task) {
+            $project_task_ids[] = $task->id;
+        }
+        return array($project_task_ids, $task);
+    }
+
+    /**
+     * @param $username
+     * @return array
+     */
+    public function getUserTasks($username)
+    {
+        $member = $this->member->getUserIdByUsername($username);
+
+        if (!$member) throw new UsernameNotFoundException;
+
+        $user_tasks = $this->taskStatRepo->getUserTasks($member->id);
+
+        $user_task_ids = [];
+
+        foreach ($user_tasks as $task) {
+            $user_task_ids[] = $task->task_id;
+        }
+        return $user_task_ids;
+    }
+
+    /**
+     * @param $user_task_ids
+     * @param $project_task_ids
+     * @return array
+     */
+    public function filterProjectAndUserTasks($user_task_ids, $project_task_ids)
+    {
+        $task_ids = [];
+
+        foreach ($user_task_ids as $task_id) {
+            if (in_array($task_id, $project_task_ids)) {
+                $task_ids[] = $task_id;
+            }
+        }
+        return $task_ids;
     }
 
 }

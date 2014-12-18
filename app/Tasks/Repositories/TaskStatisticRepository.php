@@ -40,6 +40,9 @@ class TaskStatisticRepository extends EloquentRepository
         }
     }
 
+    /**
+     * @param $task
+     */
     public function updateTask($task)
     {
 
@@ -160,5 +163,14 @@ class TaskStatisticRepository extends EloquentRepository
     public function getTaskAcceptedUsers($task_id)
     {
         return $this->model->where('task_id', '=', $task_id)->where('accepted_by', '>=', '1')->get();
+    }
+
+    /**
+     * @param $user_id
+     * @return mixed
+     */
+    public function getUserTasks($user_id)
+    {
+        return $this->model->select('assigned_to', 'task_id')->where('assigned_to', '=', $user_id)->get();
     }
 }

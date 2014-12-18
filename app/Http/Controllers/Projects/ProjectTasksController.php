@@ -19,6 +19,8 @@ class ProjectTasksController extends AbstractProjectController
      */
     public function getPersonalTasks($username, $project_slug)
     {
-        return 'supp';
+        $tasks = $this->taskService->getPersonalProjectTasks($username, $project_slug);
+
+        return view('project.personal-project-tasks', compact('tasks'));
     }
 }

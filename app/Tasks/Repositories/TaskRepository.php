@@ -7,8 +7,15 @@ use TGLD\Tasks\Task;
 
 class TaskRepository extends EloquentRepository
 {
+    /**
+     * @var Guard
+     */
     protected $auth;
 
+    /**
+     * @param Task $model
+     * @param Guard $auth
+     */
     function __construct(Task $model, Guard $auth)
     {
         $this->auth = $auth;
@@ -16,6 +23,10 @@ class TaskRepository extends EloquentRepository
     }
 
 
+    /**
+     * @param $task
+     * @return Task
+     */
     public function saveTask($task)
     {
         $this->model->title = $task->title;
@@ -32,6 +43,9 @@ class TaskRepository extends EloquentRepository
         return $this->model;
     }
 
+    /**
+     * @param $task
+     */
     public function denyTask($task)
     {
         $itask = $this->model->where('id', '=', $task->id)->first();
@@ -158,11 +172,19 @@ class TaskRepository extends EloquentRepository
     }
 
 
+    /**
+     * @param $slug
+     * @return mixed
+     */
     public function getAllIdBySlug($slug)
     {
         return  $this->model->with('assignedUser', 'assignee', 'project')->select('id', 'slug')->where('slug', '=', $slug)->get();
     }
 
+    /**
+     * @param $task
+     * @return mixed
+     */
     public function deleteTask($task)
     {
         $itask = $this->model->where('id', '=', $task->id)->first();
@@ -172,6 +194,10 @@ class TaskRepository extends EloquentRepository
         return $itask;
     }
 
+    /**
+     * @param $priority
+     * @param $id
+     */
     public function setPriority($priority, $id)
     {
         $task = $this->model->where('id', '=', $id)->first();
@@ -179,6 +205,11 @@ class TaskRepository extends EloquentRepository
         $task->priority = $priority;
 
         $task->save();
+    }
+
+    public function getFromTaskIds($task_ids)
+    {
+        return $this->model->whereIn('id', $task_ids)->get();
     }
 
 }
