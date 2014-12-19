@@ -30,7 +30,7 @@
                              @if($task->taskDetails->website_link == null)
                                  <td>No website links</td>
                              @else
-                                 <td><a href="{{$task->taskDetails->website_link}}">Website link</a></td>
+                                 <td><a target="_blank" href="{{$task->taskDetails->website_link}}">Website link</a></td>
                              @endif
                         </tr>
                         <tr>
@@ -38,7 +38,7 @@
                             @if($task->taskDetails->related_link == null)
                                 <td>No related links</td>
                             @else
-                                <td><a href="{{$task->taskDetails->related_link}}">Related Link</a></td>
+                                <td><a target="_blank" href="{{$task->taskDetails->related_link}}">Related Link</a></td>
                             @endif
                         </tr>
                         <tr>
