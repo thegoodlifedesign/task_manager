@@ -21,11 +21,15 @@
                                 </div>
                                 <div class="task-options">
                                     @if(App::make('taskHelpers')->isTaskAccepted($task))
-                                    {!! Form::open(['url' => URL::route(''.$stage.'.task')]) !!}
-                                         <input type="hidden" name="task_id" value="{{$task->id}}">
-                                         <input type="hidden" name="completion_time" value="{{$task->taskDetails->completion_time}}">
-                                         <button class="check-mark-btn" type="submit">{!! HTML::image('static/img/checkmark.png') !!}</button>
-                                    {!! Form::close() !!}
+                                        {!! Form::open(['url' => URL::route(''.$stage.'.task')]) !!}
+                                             <input type="hidden" name="task_id" value="{{$task->id}}">
+                                             <input type="hidden" name="completion_time" value="{{$task->taskDetails->completion_time}}">
+                                             <button class="check-mark-btn" type="submit">{!! HTML::image('static/img/checkmark.png') !!}</button>
+                                        {!! Form::close() !!}
+                                        {!! Form::open(['url' => URL::route('deny.task')]) !!}
+                                             <input type="hidden" name="task_id" value="{{$task->id}}">
+                                             <button class="decline-mark-btn" type="submit">{!! HTML::image('static/img/decline-mark.png') !!}</button>
+                                        {!! Form::close() !!}
                                     @else
                                         @include('partials.accept-task-modal')
                                         <button type="button" class="check-mark-btn" data-toggle="modal" data-target="#myModal">
