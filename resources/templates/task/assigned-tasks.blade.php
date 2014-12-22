@@ -1,5 +1,5 @@
 @extends('layouts.admin')
 @section('adminContent')
 <?php $stage = 'accept'; ?>
-@include('partials.tasks-with-button')
+@include('partials.assigned-tasks')
 @stop
